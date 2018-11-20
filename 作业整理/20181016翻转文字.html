@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            padding:200px;
+            color:rgb(212, 64, 150);
+            text-align: center;
+        }
+        span{
+            
+            font-size: 100px;
+            font-family: "微软雅黑";
+            position: relative;
+            
+        }
+        span:before,span:after{
+            content:attr(data-q);
+            position: absolute;
+            left: 0%;
+            top: 0;
+            transform-origin: left center;
+            transition:all 0.3s linear 0s;
+        }
+        span:before{
+            color:rgb(30, 177, 235);
+            z-index: 3;
+            transform:rotateY(15deg);
+        }
+        span:after{
+            color:rgba(0,0,0,0.3);
+            z-index:2;
+            transform: rotateY(0deg) scale(1.1, 1);
+        }
+        span:hover:before{
+            transform:rotateY(40deg) skew(0deg, 3deg);
+        }
+        span:hover:after{
+            transform:rotateY(40deg) skew(0deg,20deg);
+        }
+        </style>
+</head>
+<body>
+    <span data-q="尤">尤</span>
+	<span data-q="克">克</span>
+	<span data-q="里">里</span>
+	<span data-q="里">里</span>
+</body>
+</html>

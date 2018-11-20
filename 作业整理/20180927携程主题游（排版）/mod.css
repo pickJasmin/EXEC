@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font: 12px/1.5 "微软雅黑";
+    color: #a3a3a3;
+    background-color:snow;
+}
+ul{
+    list-style: none;
+}
+
+.one{
+    width: 980px;
+    /* height: 430px; */
+    margin: 20px auto;
+    /* background-color:silver; */
+    /* 外边距，色块居中，上面与色块距离20像素 */
+    
+}
+.one .one-content{
+    height: 375px;
+    /* 边框 */
+    /* border: 1px solid #E0E0E0; */
+    border: 1px solid red;
+    border-top-width: 0px;
+}
+.one .top{
+    height: 54px;
+    background-color: aqua;
+
+}
+.one .left{
+    float: left;
+    width: 184px;
+    height: 375px;
+    background-color: salmon;
+    border-right: 1px dotted red;
+}
+.one .right{
+    float: left;
+    width:793px ;
+    height: 375px;
+    background-color: aquamarine;
+
+}

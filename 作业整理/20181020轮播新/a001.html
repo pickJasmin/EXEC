@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播</title>
+    <style type="text/css">
+        body, ul, li{
+            margin: 0;
+            padding: 0;
+			background-image:url('img/003.jpg');
+        }
+		/* 标题 */
+        h2{
+            text-align: center;
+            color: salmon; 
+			font-family: 'Courier New', Courier, monospace;
+			margin: 50px auto;
+        }
+		/* 标题 */
+        li{
+            list-style: none;
+        }
+        img{
+            display: block;
+        }
+        .box{
+            height: 300px;
+            width: 500px;
+            border: 1px solid silver;
+            padding: 7px;
+            margin: 100px auto;
+            border-radius: 5px;
+            background-color: antiquewhite;
+			border:5px solid #eaeaea;
+			box-shadow:1px 1px 5px rgba(0,0,0,0.7);/* 向div元素添加阴影 */
+			overflow:visible;/* 内容溢出的框不会被修剪 */
+			position:relative;
+			
+
+        }
+        .box ul{
+            width: 100%;
+			height: 100%;
+			position: relative;
+			overflow: hidden;
+        }
+        .box li{
+            position: absolute;
+            top: -310px;
+        }
+        .box li:first-child{
+            top:0px;
+        }
+		
+		/* 黑线开始 */
+		.bar{
+			position:relative;
+			top:-5px;
+			width:500px; 
+			height:5px;
+			background:#000;
+			-moz-animation:fullexpand 25s ease-out infinite;
+			-webkit-animation:fullexpand 25s ease-out infinite;
+		}
+		.box:hover li, 
+		.box:hover .bar {
+			-moz-animation-play-state:paused;
+			-webkit-animation-play-state:paused;/* 动画的暂停 */
+		}
+		/* 黑线结束 */
+
+		/* 左边黑条开始 */
+		.tooltip{
+			background: rgba(0,0,0,0.7);
+    		width: 300px;
+    		height: 60px;
+    		position: relative;
+    		bottom: 90px;
+    		left: -320px;
+			font-family: "宋体";
+    		-moz-transition: all 0.4s ease-in-out;
+    		-webkit-transition: all 0.4s ease-in-out;/* 动画有一个缓慢的开始和一个缓慢的结束。 */
+		}
+		.tooltip h1 {
+			color:#fff;
+			font-size:24px;
+			font-weight:300;
+			line-height:60px;
+			padding:0 0 0 20px;
+		}
+		li#first:hover .tooltip, 
+		li#second:hover .tooltip, 
+		li#third:hover .tooltip, 
+		li#fourth:hover .tooltip, 
+		li#fifth:hover .tooltip,
+		li#finally:hover .tooltip
+		{
+			left:0px;
+		}
+
+		/* 左边黑条结束 */
+        .box li:nth-child(1) {
+			animation: cycle 40s linear infinite;
+		}
+        .box li:nth-child(2) {
+			animation: cycletwo 40s linear infinite;
+		}
+
+		.box li:nth-child(3) {
+			animation: cyclethree 40s linear infinite;
+		}
+
+		.box li:nth-child(4) {
+			animation: cyclefour 40s linear infinite;
+		}
+
+		.box li:nth-child(5) {
+			animation: cyclefive 40s linear infinite;
+		}
+        .box li:nth-child(6) {
+			animation: cyclesix 40s linear infinite;
+		}
+        @keyframes cycle {
+			0%  {top: 0px;}
+			4%  {top: 0px;}
+			16% {top: 0px; opacity: 1; z-index: 0;} 
+			20% {top: 325px; opacity: 0; z-index: 0;}
+			21% {top: -325px; opacity: 0; z-index: -1;}
+			50% {top: -325px; opacity: 0; z-index: -1;}
+			92% {top: -325px; opacity: 0; z-index: 0;}
+			96% {top: -325px; opacity: 0;}
+			100%{top: 0px; opacity: 1;}
+		}
+
+		@keyframes cycletwo {
+			0%  {top: -325px; opacity: 0;}
+			16% {top: -325px; opacity: 0;}
+			20% {top: 0px; opacity: 1;}
+			24% {top: 0px; opacity: 1;} 
+			36% {top: 0px; opacity: 1; z-index: 0;} 
+			40% {top: 325px; opacity: 0; z-index: 0;}
+			41% {top: -325px; opacity: 0; z-index: -1;}  
+			100%{top: -325px; opacity: 0; z-index: -1;}
+		}
+
+		@keyframes cyclethree {
+			0%  {top: -325px; opacity: 0;}
+			36% {top: -325px; opacity: 0;}
+			40% {top: 0px; opacity: 1;}
+			44% {top: 0px; opacity: 1;} 
+			56% {top: 0px; opacity: 1; z-index: 0;} 
+			60% {top: 325px; opacity: 0; z-index: 0;} 
+			61% {top: -325px; opacity: 0; z-index: -1;}
+			100%{top: -325px; opacity: 0; z-index: -1;}
+		}
+
+		@keyframes cyclefour {
+			0%  {top: -325px; opacity: 0;}
+			56% {top: -325px; opacity: 0;}
+			60% {top: 0px; opacity: 1;}
+			64% {top: 0px; opacity: 1;}
+			76% {top: 0px; opacity: 1; z-index: 0;}
+			80% {top: 325px; opacity: 0; z-index: 0;}
+			81% {top: -325px; opacity: 0; z-index: -1;}
+			100%{top: -325px; opacity: 0; z-index: -1;}
+		}
+
+		@keyframes cyclefive {
+			0%  { top:-325px; opacity:0; }
+			76% { top:-325px; opacity:0; }
+			80% { top:0px; opacity:1; }
+			84% { top:0px; opacity:1; }
+			96% { top:0px; opacity:1; z-index:0; }
+			100%{ top:325px; opacity:0; z-index:0; }
+		}
+        @keyframes cyclesix {
+			0%  { top:-325px; opacity:0; }
+			76% { top:-325px; opacity:0; }
+			80% { top:0px; opacity:1; }
+			84% { top:0px; opacity:1; }
+			96% { top:0px; opacity:1; z-index:0; }
+			100%{ top:325px; opacity:0; z-index:0; }
+		}
+
+    </style>
+
+</head>
+<body>
+<div id="slider">
+    <div>
+       <h2>黄景瑜</h2> 
+    </div>
+    
+    <div class="box">
+        
+        <ul>
+			<li id="first">
+				<img src="./img/1.jpg" alt="">
+				<div class="tooltip">
+					<h1>可甜的鲸鱼哥哥</h1>
+				</div>
+			</li>
+			
+			<li id="second">
+				<img src="./img/2.jpg" alt="">
+				<div class="tooltip">
+					<h1>可盐的鲸鱼哥哥</h1>
+				</div>
+			</li>
+			
+			<li id="third">
+				<img src="./img/3.jpg" alt="">
+				<div class="tooltip">
+					<h1>帅气的鲸鱼哥哥</h1>
+				</div>
+			</li>
+			
+			<li id="fourth">
+				<img src="./img/4.jpg" alt="">
+				<div class="tooltip">
+					<h1>可爱的鲸鱼哥哥</h1>
+				</div>
+			</li>
+			
+			<li id="fifth">
+				<img src="./img/5.jpg" alt="">
+				<div class="tooltip">
+					<h1>三岁的鲸鱼哥哥</h1>
+				</div>
+			</li>
+			
+			<li id="finally">
+				<img src="./img/6.jpg" alt="">
+				<div class="tooltip">
+					<h1>幼稚的鲸鱼哥哥</h1>
+				</div>
+			</li>
+			
+		</ul>
+		<div class="bar"></div>
+	</div>
+</div>
+	
+</body>
+</html>

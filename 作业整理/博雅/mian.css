@@ -1,0 +1,380 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.cl{
+    clear: both;/* 清除浮动 */
+}
+body{
+    font-size: 14px;
+    font-family: "Arial","微软雅黑";
+}
+
+/* 通条背景样式开始  */
+/* 版心样式开始 */
+.innerCenter{
+    width: 1000px;
+    margin: 0px auto;
+}
+/* 版心样式结束 */
+
+.header .logo{
+    float: left;
+    padding-left: 14px;
+    margin-right: 39px;
+    width: 174px;
+}
+/* 头部样式开始 */
+.header{
+    height: 58px;
+    background-color: #191D3A;
+}
+/* 头部样式结束 */
+
+
+/* 导航条样式开始 */
+.header .nav{
+    float: left;
+    width: 607px;
+}
+.header .nav ul{
+    list-style: none;
+}
+.header .nav ul li{
+    float: left;
+    width: 100px;
+    border-left: 1px solid #252947;
+}
+.header .nav ul li.last{
+    border-right: 1px solid #252947;
+}
+.header .nav ul li a{
+    display:block;
+    widows: 100px;
+    height: 58px;
+    line-height: 58px;
+    text-align: center;/* 文本居中 */
+    text-decoration: none;/* 去掉下划线 */
+    color: #818496;
+}
+
+.header .nav ul li a:hover{
+    color: #E2E4ED;
+}
+.header .nav ul li.first{
+    color: #E2E4ED;
+    background-color: #252947;
+}
+
+/* 导航条样式结束 */
+
+/* 加入我们样式开始 */
+.header .add{
+    float: left;
+    margin-left: 48px;
+    padding-top: 12px;
+}
+.header .add a{
+    display: block;
+    width: 98px;
+    height: 32px;
+    border: 1px solid #3ACA7A;
+    border-radius: 4px;/* 边框圆角 */
+    background-color: #38B774;
+    line-height: 32px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+/* 加入我们样式结束 */
+
+/* 通条背景样式结束 */
+
+
+/* 背景图片样式开始 */
+.banner{
+    height: 465px;
+    background-image:url(images/banner.jpg);/* 背景图片 */
+    background-repeat: no-repeat;/* 背景图不重复 */
+    background-position: center center;/* 背景图片位置为居中 */
+}
+/* 背景图片样式结束 */
+
+
+
+/* 游戏推荐区样式开始  */
+.content{
+    background-image: url(images/indexmainbg.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+.content .product ul{
+    list-style: none;
+}
+.content .product li{
+    float: left;
+    width: 218px;
+    height: 191px;
+    margin-right: 43px;
+    /* background-color: #252947; */
+}
+.content .product li.last{
+    width: 217px;
+    margin-right: 0px;
+    
+}
+
+
+.content .product{
+    /* 拉开上下间距 */
+    padding-top: 50px;
+    padding-bottom: 39px;
+    /* 拉开上下间距 */
+
+    height: 191px;
+    border-bottom: 1px solid #DBE1E7;
+}
+
+/* 图片样式和处理样式开始 */
+.content .product li img{
+    display: block;
+    width: 218px;
+    height: 128px;
+}
+.content .product li.last img{
+    width: 217px;
+}
+
+.content .product li a{
+    display: block;/* 行内元素变为块元素 */
+    /* width: 218px; */
+    height: 191px;
+    text-decoration: none;
+}
+.content .product li.last a{
+    width: 217px;
+}
+/* 图片样式和处理样式结束 */
+
+.content .product li a:hover{
+    background-color: #38B774;
+}
+
+/* h5标签和p标签样式开始 */
+.content .product li h5{
+    line-height: 30px;
+    text-align: center;
+    color: #444866;
+}
+.content .product li p{
+    line-height: 32px;
+    text-align: center;
+    color: #38B774;
+    font-weight: bold;/* 加粗字体 */
+
+/* 添加三角形背景图 */
+    background-image: url(images/tgreen.png);
+    background-repeat: no-repeat;
+    background-position: 150PX 14PX;
+    
+}
+/* 悬停时候的h5标签和p标签样式开始 */
+.content .product li a:hover h5{
+    color: white;/* 悬停状态下可修改后代的状态 */
+}
+.content .product li a:hover p{
+    color: white;/* 悬停状态下可修改后代的状态 */
+    background-image: url(images/twhite.png);
+}
+/* 悬停时候的h5标签和p标签样式结束 */
+
+/* h5标签和p标签样式结束 */
+/* 游戏推荐区样式结束  */
+
+
+
+/* 信息区样式开始 */
+
+.content .info{
+    margin: 52px 0px;
+    overflow: hidden;
+}
+
+/* 新闻栏样式开始 */
+.content .info .news{
+    float: left;
+    background-image: url(images/bynewsbg.jpg);
+    width: 500px;       /* 内容宽 */
+
+}
+/* MORE样式开始 */
+.content .info .news .more{
+    padding-top: 40px;
+    padding-left: 218px;
+    margin-bottom: 50px;
+}
+.content .info .news .more a{
+    display: block;
+    width: 64px;
+    height: 26px;
+    border-radius: 5px;
+    border: 1px solid #33B972;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    padding-top: 4px;
+    font-weight: bold;
+
+}
+.content .info .news .more a:hover{
+    color: white;
+    background-color: #33B972;
+}
+/* MORE样式结束 */
+
+
+/* 列表样式开始 */
+.content .info .news ul{
+    list-style: none;
+    padding-left: 20px;
+}
+.content .info .news ul li{
+    height: 40px;
+    width: 460px;
+    line-height: 40px;
+    border-bottom: 1px solid #DBE1E7;
+}
+.content .info .news ul li a{
+    float: left;
+    text-decoration: none;      /* 去掉下划线 */
+    color: #444866;
+    font-weight: bold;  /* 加粗字体 */
+}
+.content .info .news ul li a:hover{
+    color: #33B972;
+
+}
+.content .info .news ul li span{
+    float: right;
+    color: #CAC4CF;
+    font-weight: bold;
+}
+/* 列表样式结束 */
+
+
+/* 新闻栏样式结束 */
+
+
+/* 招聘栏样式开始 */
+.content .info .jobs{
+    float: left;
+    background-image: url(images/byhrbg3.jpg);
+    width: 480px;       /* 内容宽 */
+    padding-left: 20px;
+    position: relative; /* 为了孩子的绝对定位参考点设计的 */
+}
+.content .info .jobs a.more{
+    position: absolute; /* 绝对定位 */
+    left: 218px;
+    top:40px;
+    width: 64px;
+    height: 26px;
+    border-radius: 5px;
+    border: 1px solid white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    padding-top: 4px;
+    font-weight: bold;
+    color: white;
+    
+}
+.content .info .jobs a.more:hover{
+    background-color: white;
+    color: #33B972;
+}
+
+
+.content .info .jobs .jobsOne{
+    padding-top: 44px;
+    padding-left: 60px;
+    margin-bottom: 30px;
+}
+.content .info .jobs .jobsOne h3{
+    font-family: "微软雅黑";
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+}
+.content .info .jobs .jobsOne p{
+    font-size: 12px;
+    color: white;
+}
+
+
+.content .info .jobs h4{
+    font-family: "微软雅黑";
+    font-weight: bold;
+    color: white;
+}
+.content .info .jobs ul{
+    list-style: none;
+}
+.content .info .jobs ul li{
+    width: 308px;
+    height: 38px;
+    line-height: 38px;
+    border-bottom: 1px solid #6FDEA3;
+}
+.content .info .jobs ul li a{
+    text-decoration: none;
+    display: block;
+    color: white;
+    font-weight: bold;
+}
+
+/* 招聘栏样式结束 */
+
+/* 信息区样式结束 */
+
+
+/* 底部样式开始 */
+.foot{
+    height: 150px;
+    background-color: #191D3A;
+}
+.foot p{
+    float: left;        	
+    line-height: 60px;        	
+    color: #6C6E7E;
+    font-size: 12px;
+}
+
+.foot p.copyright{
+    width: 960px;
+    text-align:center;
+}
+
+.foot p.webmap{
+    text-align:left;
+}
+
+.foot a{
+    color: #6C6E7E;
+    text-decoration:none;
+}
+.foot a:hover{
+    color: white;
+}
+
+.foot .govIcon{
+    float:right;
+    padding-top:10px;
+}
+
+.foot .govIcon img{
+    width:40px;
+    height: 52px;  
+}
+/* 底部样式结束 */

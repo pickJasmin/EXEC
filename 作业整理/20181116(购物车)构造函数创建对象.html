@@ -1,0 +1,93 @@
+<script>
+    //商品类
+    class Product {
+        constructor(id, title, price, imgSrc) {
+            //商品类成员
+            this.id = id;
+            this.title = title;
+            this.price = price;
+            this.imgSrc = imgSrc;
+        }
+    }
+
+    //订单类-2
+    class Order {
+        constructor(product, qty) {
+            //订单类成员
+            this.id = product.id;
+            this.title = product.price;
+            this.price = product.price;
+            this.imgSrc = product.imgSrc;
+            this.qty = qty;
+        }
+    }
+
+
+
+    //购物车数据类---确定格式
+    class Cartdata {
+        //数据成员
+        constructor() {
+            this.orderList = new Array();//订单列表
+            this.units = 0;//总样本
+            this.totalQty = 0;//总件数
+            this.totalAmount = 0;//总金额
+        }
+    }
+
+    //加入购物车订单-2
+    //函数定义--将某个订单order，加入购物车
+    function addtoCart(order) {
+        var flag = true;//假设当前是新商品
+        for (var i = 0; i < myCart.orderList.length; i++) {
+            if (order.id == myCart.orderList[i].id) {
+                flag = false; //修改状态，是老商品
+                //新增对应qty
+                myCart.orderList[i].qty += order.qty;
+                break;
+            }
+        }
+        if (flag) {
+            //orser是购物车的新商品，给样本数++
+            myCart.orderList.push(order);
+            myCart.units++;
+        }
+        myCart.totalQty += order.qty;
+        myCart.totalAmount += order.price * order.qty;
+    }
+
+
+
+
+    //实例化购物车数据-订单一进购物车
+    var product1 = new Product('01', '30片巨补水 秋冬新款面膜', 99.99, 'images/01.jpg');
+    var product2 = new Product('02', '新西兰进口白金版婴幼儿奶粉', 100.99, 'images/02.jpg');
+
+
+    order = new Order(product1, 3);
+    //加入购物车订单-1
+    var myCart = new Cartdata();
+    addtoCart(order);//调用加入购物车函数
+
+
+    // myCart.orderList.push(order);
+    // myCart.units = 1;
+    // myCart.totalQty = order.qty;
+    // myCart.totalAmount = order.price * order.qty;
+
+
+
+    console.log(myCart);
+
+
+
+    order = new Order(product2, 1);
+    addtoCart(order);//调用加入购物车函数
+    console.log(myCart);
+
+
+    order = new Order(product2, 2);
+    addtoCart(order);//调用加入购物车函数
+    console.log(myCart);
+
+</script>

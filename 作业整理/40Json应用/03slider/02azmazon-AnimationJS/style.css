@@ -1,0 +1,192 @@
+
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, em, button {
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+.ShowContainer {
+	max-width: 1500px;
+    min-width: 1000px;
+    height: 300px;
+    margin: auto; 
+    position: relative;    
+}
+
+.arrow{
+	position: absolute;  
+	top: 110px; 	  
+    width: 19px;
+    height: 40px;
+    cursor: pointer;   
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index:2;  
+}
+
+
+.arrow-left{
+      left:20px;
+      background-image: url("images/arrowL.png");  
+}
+
+.arrow-right{ 	 
+	right:20px;	
+    background-image: url("images/arrowR.png");   
+}
+
+.pic{ 
+    position: absolute;
+    top:0;
+    left:0;
+    transition: opacity 1s linear;   
+    z-index: 2;
+
+}
+.opacity0{opacity:0;}
+.opacity1{opacity:1;}
+
+.txtItems{    
+    position: absolute;
+    z-index:2; 
+    left:0;
+    cursor: pointer;
+    color: #fff;
+    width: 100%;
+    overflow: hidden;
+    transition: height 0.25s linear;
+}
+
+.shorten{
+    bottom: 0px;
+    height: 5px;
+}
+
+.heighten{
+    bottom: 0px;
+    height: 50px;
+}
+
+.txtItems:hover{
+   bottom: 0px;
+   height: 50px;
+}
+
+.txtItemsLi{
+    text-align: center;
+    width: 11.45%; 
+    padding: 0.5%;
+    margin-right: 0.05%;
+    background-color:#333; 
+    opacity: 0.5;   
+    float: left;   
+   transition: opacity 0.25s linear;
+
+}
+.txtItemsLi:hover{
+    background-color: #FF8C00;
+    opacity: 1;
+
+}
+
+.currentTxt{
+    background-color: #FF8C00;
+    opacity: 1;
+}
+
+
+.txtItemsLi span{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+
+
+
+
+/* 补充 */
+
+#images{
+    position: relative;/* 父亲相对定位 */
+}
+#images>a{
+    transition: opacity 1s linear;/* 透明度线性渐变 */
+    display: block;
+    position: absolute;/* 孩子绝对定位 */
+    top: 0;
+    left: 0;
+}
+.displayImg{
+    /* display: block; */
+    opacity: 1;/* 透明度显示 */
+}
+.hiddenImg{
+    /* display: none; */
+    opacity: 0;/* 透明度隐藏 */
+}
+
+
+.slider{
+    width: 1500px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+.slider img{
+    display: block;
+}
+
+.btn{
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 30px;
+    background-color: black;
+    opacity: 0.3;/* 透明度 */
+    color: #fff;
+    cursor: pointer;/* 光标呈现为一只手 */
+    text-align: center;
+    line-height: 30px;/* 行高 */
+}
+.leftButton{
+    left: 20px;
+}
+.rightButton{
+    right: 20px;
+}
+.txt-box{
+    width: 100%;
+    /* background-color: black;
+    opacity: 0.3; */
+    height: 5px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    z-index: 5;
+    transition: height 0.1s linear 0s;/* 过渡它的高线性渐变 */
+}
+.txt-box:hover{
+    height: 40px;
+}
+.txtItem{
+    width: 12.5%;
+    background-color: rgba(0,0,0,0.5);/* 设置rgb颜色值，最后0.5为透明度  */
+    margin-right: 2px;
+    color: #fff;
+    text-align: center;
+}
+.txt-box li:hover,.heighlightColor{
+    background-color: rgb(252, 135, 25);
+}
+.txt-box:last-child{
+    margin: 0;/* 把最后一个孩子的边界值消掉 */
+}
+
+.normalColor{
+    background-color: rgba(0,0,0,0.3);/* 设置rgb颜色值，最后0.5为透明度 */
+}

@@ -1,0 +1,69 @@
+<script>
+
+    //商品类
+    class Product {
+        constructor(id, title, price, imgSrc) {
+            this.id = id;
+            this.title = title;
+            this.price = price;
+            this.imgSrc = imgSrc;
+        }
+    }
+    //商品对象/实例
+    var product1 = new Product('01', '30片巨补水 秋冬新款面膜', 99.99, 'images/01.jpg');
+    var product2 = new Product('02', '新西兰进口白金版婴幼儿奶粉', 100.99, 'images/02.jpg');
+    //访问商品对象
+    console.log(product1);
+    console.log(product2);
+    //形式访问商品对象的属性
+    console.log(product1.id);
+    console.log(product2.id);
+    //下标形式访问商品对象
+    console.log(product1['id']);
+    console.log(product2['id']);
+
+    //数组输出
+    var stList = new Array();
+    stList.push(product1);
+    console.log(stList);
+    console.log(stList[0].price);
+
+
+
+    //订单类
+    class Order {
+        constructor(product, qty) {
+            this.product = product;
+            this.qty = qty;
+        }
+    }
+    //创建订单对象
+    var order1 = new Order(product1, 5);
+    //获取订单对象
+    console.log(order1);
+    //获得订单对象的product
+    console.log(order1.product);
+    //获得订单对象的product属性的二级属性title
+    console.log(order1.product.title);
+    console.log(order1.product.price);
+
+    var order2 = new Order(product2, 4);
+    console.log(order2);
+    console.log(order2.product.price);
+
+
+    class Cartdata {
+        //数据成员 订单列表 总样本 总件数 总金额
+        constructor() {
+            this.orderList = new Array();
+            this.units = 0;
+            this.totalQty = 0;
+            this.totalAmount = 0;
+        }
+    }
+
+    var ct = new Cartdata();
+    ct.orderList.push(order1);
+    console.log(ct);
+
+</script>
