@@ -42,14 +42,28 @@ class CartData {
 class ShoppingCart {
     //将购物车数据写入本地存储中
     setDataToLocalStorage(cartData) {
-        var cartDataString = JSON.stringify(cartData);
-        localStorage.setItem("shopp", cartDataString);//存储变量名为shopp，值为value的变量
+        //清除原有存储写入新列表
+        localStorage.removeItem('lzzyCart');
+        //写入本地存储
+        localStorage.setItem('lzzyCart', JSON.stringify(cartData));
     }
     //从本地存储中获取购物车数据
     getDataFromLocalStorage() {
-        return localStorage.getItem("shopp");
+        let lzzyCart = localStorage.getItem('lzzyCart');
+        // 判断购物车是否为空
+        if (lzzyCart == null || lzzyCart == '') {
+            return new CartData();
+        }
+        else {
+            return JSON.parse(lzzyCart);
+        }
+
     }
 
     //获取选中对象的订单列表
     getSelectedList() { }
+    //加入购物车（写入localStorage）
+    addToCart(order) {
+
+    }
 }
