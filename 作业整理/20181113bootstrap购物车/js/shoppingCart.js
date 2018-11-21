@@ -57,13 +57,87 @@ class ShoppingCart {
         else {
             return JSON.parse(lzzyCart);
         }
-
     }
 
-    //获取选中对象的订单列表
-    getSelectedList() { }
+    // //获取选中对象的订单列表
+    // getSelectedList() { }
+
+
     //加入购物车（写入localStorage）
     addToCart(order) {
+        let cartData = this.getDataFromLocalStorage();
+
+        var flag = true;//假设当前是新商品
+        for (var i = 0; i < cartData.orderList.length; i++) {
+            if (order.id == cartData.orderList[i].id) {
+                flag = false; //修改状态，是老商品
+                //新增对应qty
+                cartData.orderList[i].qty += order.qty;
+                break;
+            }
+        }
+        if (flag) {
+            //orser是购物车的新商品，给样本数++
+            cartData.orderList.push(order);
+            cartData.units++;
+        }
+
+        cartData.totalQty += order.qty;
+        cartData.totalAmount += order.price * order.qty;
+
+
+
+        //将新购物车数据写入本地存储
+        this.setDataToLocalStorage(cartData);
+    }
+    //清除购物车
+    clearCart() {
+        // localStorage.clear();
+        localStorage.removeItem('lzzyCart');
+    }
+    //获取选中的商品的总数量
+    getSelectedQty() {
+        //获取购物车的数据
+        let cartData = this.getDataFromLocalStorage();
+        //获取购物车数据的订单列表
+        let orderList = cartData.orderList;
+        let selectedQty = 0
+
+        for (let i in orderList) {
+            //selectStatus判断真假状态，默认为真
+            if (orderList[i].selectStatus) {
+                selectedQty += orderList[i].qty;
+            }
+        }
+        return selectedQty;
+    }
+    //获取选中商品的总价格
+    getSelectedAmount() {
+        //获取购物车的数据
+        let cartData = this.getDataFromLocalStorage();
+        //获取购物车数据的订单列表
+        let orderList = cartData.orderList;
+        let selectedAmount = 0;
+
+        for (let i in orderList) {
+            //selectStatus判断真假状态，默认为真
+            if (orderList[i].selectStatus) {
+                selectedAmount += orderList[i].qty * orderList[i].price;
+            }
+        }
+        return selectedAmount;
+    }
+    //设置购物车订单项选择状态
+    setItemSelectedStatus(id, selectStatus) {
+        //获取购物车的数据
+        let cartData = this.getDataFromLocalStorage();
+        //获取购物车数据的订单列表
+        let orderList = cartData.orderList;
+        let selectedStatus=0;
+    }
+    //删除指定ID商品
+    deleteItem(id) {
 
     }
+
 }

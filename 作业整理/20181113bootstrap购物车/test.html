@@ -12,23 +12,61 @@
     <script src="js/shoppingCart.js"></script>
     <script>
         //商品
-        var p = new Product('001', '面膜', '50.5', '01.jpg');
+        // var p = new Product('001', '面膜', '50.5', '01.jpg');
+
         //订单
-        var order = new Order(p, 2, true);
+        // var order = new Order(p, 2, true);
         //购物车数据
-        var cartData = new CartData();
-        //将订单加入购物车数据
-        cartData.orderList.push(order);
-        cartData.units = 1;
-        cartData.totalQty = order.qty;
-        cartData.totalAmount = order.qty * order.price;
+        // var cartData = new CartData();
+        // //将订单加入购物车数据
+        // cartData.orderList.push(order);
+        // cartData.units = 1;
+        // cartData.totalQty = order.qty;
+        // cartData.totalAmount = order.qty * order.price;
 
         //创建购物车操作对象
+        // var cart = new ShoppingCart();
+        // //将购物车数据写入本地存储
+        // cart.setDataToLocalStorage(cartData);
+        // //将购物车数据读出来显示到控制台
+        // console.log(cart.getDataFromLocalStorage())
+
+        // 创建一个购物车
         var cart = new ShoppingCart();
-        //将购物车数据写入本地存储
-        cart.setDataToLocalStorage(cartData);
-        //将购物车数据读出来显示到控制台
-        console.log(cart.getDataFromLocalStorage())
+        cart.clearCart();
+
+
+        // 创建一个商品
+        var p = new Product('001', '面膜', '50.5', '01.jpg');
+        //创建一个订单
+        var order = new Order(p, 2, true);
+        // 将订单order置入购物车（本地存储）
+        cart.addToCart(order);
+
+
+        // 创建二个商品
+        var p = new Product('002', '毛巾', '10.5', '03.jpg');
+        //创建一个订单
+        var order = new Order(p, 2, true);
+        // 将订单order置入购物车（本地存储）
+        cart.addToCart(order);
+
+
+        // 创建三个商品
+        var p = new Product('003', '牙膏', '20.5', '02.jpg');
+        //创建一个订单
+        var order = new Order(p, 8, true);
+        // 将订单order置入购物车（本地存储）
+        cart.addToCart(order);
+
+
+        console.log(cart.getSelectedQty());
+        console.log(cart.getSelectedAmount());
+
+        cart.setItemSelectedStatus('001',false);
+
+
+
     </script>
     </script>
 </body>
