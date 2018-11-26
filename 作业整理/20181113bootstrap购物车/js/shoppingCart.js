@@ -2,10 +2,10 @@
 class Product {
     constructor(id, title, price, imgSrc) {
         //商品类成员
-        this.id = id;//商品编号
-        this.title = title;//商品名称
-        this.price = price;//商品价格
-        this.imgSrc = imgSrc;//商品图片地址
+        this.id = id; //商品编号
+        this.title = title; //商品名称
+        this.price = price; //商品价格
+        this.imgSrc = imgSrc; //商品图片地址
     }
 }
 
@@ -13,12 +13,12 @@ class Product {
 class Order {
     constructor(product, qty, selectStatus) {
         //订单类成员
-        this.id = product.id;//商品编号
-        this.title = product.title;//商品名称
-        this.price = product.price;//商品价格
-        this.imgSrc = product.imgSrc;//商品图片地址
-        this.qty = qty;//数量
-        this.selectStatus = selectStatus;//选择状态
+        this.id = product.id; //商品编号
+        this.title = product.title; //商品名称
+        this.price = product.price; //商品价格
+        this.imgSrc = product.imgSrc; //商品图片地址
+        this.qty = qty; //数量
+        this.selectStatus = selectStatus; //选择状态
     }
 }
 
@@ -32,10 +32,10 @@ class Order {
 class CartData {
     //数据成员
     constructor() {
-        this.orderList = new Array();//订单列表
-        this.units = 0;//总样本数
-        this.totalQty = 0;//总件数
-        this.totalAmount = 0;//总金额
+        this.orderList = new Array(); //订单列表
+        this.units = 0; //总样本数
+        this.totalQty = 0; //总件数
+        this.totalAmount = 0; //总金额
     }
 }
 
@@ -53,8 +53,7 @@ class ShoppingCart {
         // 判断购物车是否为空
         if (lzzyCart == null || lzzyCart == '') {
             return new CartData();
-        }
-        else {
+        } else {
             return JSON.parse(lzzyCart);
         }
     }
@@ -67,7 +66,7 @@ class ShoppingCart {
     addToCart(order) {
         let cartData = this.getDataFromLocalStorage();
 
-        var flag = true;//假设当前是新商品
+        var flag = true; //假设当前是新商品
         for (var i = 0; i < cartData.orderList.length; i++) {
             if (order.id == cartData.orderList[i].id) {
                 flag = false; //修改状态，是老商品
@@ -133,10 +132,27 @@ class ShoppingCart {
         let cartData = this.getDataFromLocalStorage();
         //获取购物车数据的订单列表
         let orderList = cartData.orderList;
-        let selectedStatus=0;
+        let flag = false;
+        for (let i in orderList) {
+            if (id == orderList[i].id) {
+                orderList[i].selectStatus = selectStatus;
+                flag = true;
+            }
+        }
+        if (flag) this.setDataToLocalStorage(cartData);
     }
     //删除指定ID商品
     deleteItem(id) {
+        //获取购物车的数据
+        let cartData = this.getDataFromLocalStorage();
+        //获取购物车数据的订单列表
+        let orderList = cartData.orderList;
+        let flag = false;
+        for (let i in orderList) {
+            if (id == orderList[i].id) {
+                flag = true;
+            }
+        }
 
     }
 
