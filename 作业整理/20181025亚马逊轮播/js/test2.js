@@ -12,7 +12,6 @@
 
 //获取一组图像
 var imagesA = document.getElementById("images").children;
-// console.log(imagesA);
 //获取一组li文本
 var txtList = document.querySelectorAll(".txt-box>li");
 console.log(txtList);
@@ -43,7 +42,6 @@ function changeImg() {
         //同类图片
         imagesA[i].className = "hiddenImg";
         txtList[i].className = "txtItem normalColor";
-        // console.log(imagesA[i]);
     }
 
     //或者
@@ -109,7 +107,7 @@ sliderDiv.addEventListener('mouseout', startChange);//移出
 
 
 //箭头函数
-sliderDiv.addEventListener('mouseout',()=>{clearInterval(timer);} );
+// sliderDiv.addEventListener('mouseout',()=>{clearInterval(timer);} );
 
 
 
@@ -143,6 +141,7 @@ function leftImg(){
     }
 
 }
+
 function rightImg(){
     if(currentNo<7){currentNo++;}
     else{

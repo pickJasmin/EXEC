@@ -41,9 +41,17 @@
 
         console.log(cart.getSelectedQty());
         console.log(cart.getSelectedAmount());
+
         cart.setItemSelectStatus('03', true);
         console.log(cart.getSelectedQty());
         console.log(cart.getSelectedAmount());
+
+        cart.deleteItem('05');
+        cart.changeQty('03','-');
+        cart.changeQty('03','-');
+        cart.changeQty('03','-');
+        cart.changeQty('03','-');
+
     </script>
 </body>
 

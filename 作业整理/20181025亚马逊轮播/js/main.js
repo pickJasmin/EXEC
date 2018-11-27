@@ -4,16 +4,18 @@
 // ["阅读新风尚", "定价49折封顶", "239元起", "大牌PK", "定价49折封顶", "239元起", "245起", "8折起"]
 // ];
 
+
+//存储在JSON数组里面
 var galleryInfo = {
 	"imageList": [
-		{ "name": "Kindle书阅读器", "textContent": "阅读风尚", "src": "01.jpg","href":"#"},
-		{ "name": "畅销书", "textContent": "定价49折封顶", "src": "02.jpg" ,"href":"#"},
-		{ "name": "Polo Ralph Lauren", "textContent": "239元起", "src": "03.jpg" ,"href":"#"},
-		{ "name": "超级电脑节", "textContent": "大牌PK", "src": "04.jpg" ,"href":"#"},
-		{ "name": "畅销书", "textContent": "定价49折封顶", "src": "05.jpg" ,"href":"#"},
-		{ "name": "个护健康", "textContent": "239起", "src": "06.jpg" ,"href":"#"},
-		{ "name": "大牌鞋", "textContent": "245起", "src": "07.jpg" ,"href":"#"},
-		{ "name": "厨卫下单", "textContent": "8折起", "src": "08.jpg" ,"href":"#"}
+		{ "name": "Kindle书阅读器", "textContent": "阅读风尚", "src": "01.jpg", "href": "#" },
+		{ "name": "畅销书", "textContent": "定价49折封顶", "src": "02.jpg", "href": "#" },
+		{ "name": "Polo Ralph Lauren", "textContent": "239元起", "src": "03.jpg", "href": "#" },
+		{ "name": "超级电脑节", "textContent": "大牌PK", "src": "04.jpg", "href": "#" },
+		{ "name": "畅销书", "textContent": "定价49折封顶", "src": "05.jpg", "href": "#" },
+		{ "name": "个护健康", "textContent": "239起", "src": "06.jpg", "href": "#" },
+		{ "name": "大牌鞋", "textContent": "245起", "src": "07.jpg", "href": "#" },
+		{ "name": "厨卫下单", "textContent": "8折起", "src": "08.jpg", "href": "#" }
 	],
 	"imgPath": "images/"
 }
@@ -23,16 +25,29 @@ var ixtItems = document.getElementById("txtItems");
 var imgs = imgItems.getElementsByTagName("img");
 
 for (var i = 0; i < galleryInfo.imageList.length; i++) {
+	//创建一个img标签
 	var nodeImg = document.createElement("img");
+	//设置样式名
 	nodeImg.className = "pic opacity0";
+	//得到图像地址，拼接图像地址
 	nodeImg.src = galleryInfo.imgPath + galleryInfo.imageList[i].src;
+
+	//创建一个a标签的节点
 	var nodeA = document.createElement("a");
+	//把imageList里的href放到a标签里面
 	nodeA.href = galleryInfo.imageList[i].href;
+
+	//新建的img标签放到a标签节点里
 	nodeA.appendChild(nodeImg);
+	//创建一个li节点
 	var nodeLiImg = document.createElement("li");
+
 	// nodeLiImg.style.display="none";
+	//新建a标签放到li节点里
 	nodeLiImg.appendChild(nodeA);
+	//新建img标签放到.....
 	imgItems.appendChild(nodeLiImg);
+	//
 	nodeLiImg.no = i;
 	var nodeLiTxt = document.createElement("li");
 	nodeLiTxt.className = "txtItemsLi";
@@ -40,7 +55,7 @@ for (var i = 0; i < galleryInfo.imageList.length; i++) {
 	nodeLiTxt.no = i;
 	var imageName = document.createElement("span");
 	imageName.textContent = galleryInfo.imageList[i].name;
-	var imageTxt= document.createElement("span");
+	var imageTxt = document.createElement("span");
 	imageTxt.textContent = galleryInfo.imageList[i].textContent;
 	nodeLiTxt.appendChild(imageName);
 	nodeLiTxt.appendChild(imageTxt);
@@ -72,7 +87,7 @@ function timer() {
 
 
 var oBtnPre = document.getElementById("arrowPre");
-oBtnPre.addEventListener('click',previousFrame);
+oBtnPre.addEventListener('click', previousFrame);
 function previousFrame() {
 	currentNo--;
 	if (currentNo < 0) {
@@ -83,8 +98,8 @@ function previousFrame() {
 }
 
 var oBtnNext = document.getElementById("arrowNext");
-oBtnNext.addEventListener('click',nextFrame);
- function nextFrame() {
+oBtnNext.addEventListener('click', nextFrame);
+function nextFrame() {
 	currentNo++;
 	if (currentNo >= imgItems.children.length) {
 		currentNo = 0;
@@ -94,8 +109,8 @@ oBtnNext.addEventListener('click',nextFrame);
 }
 
 var oContainer = document.getElementById("ShowContainer");
-oContainer.addEventListener('mouseover',txtDivheighten)
-oContainer.addEventListener('mouseout',txtDivshorten)
+oContainer.addEventListener('mouseover', txtDivheighten)
+oContainer.addEventListener('mouseout', txtDivshorten)
 function txtDivheighten() {
 	clearInterval(t);
 	txtItems.className = "txtItems heighten";
@@ -108,8 +123,8 @@ function txtDivshorten() {
 
 
 for (var i = 0; i < txtItems.children.length; i++) {
-	txtItems.children[i].addEventListener('mouseover',changePic) ;
-	txtItems.children[i].addEventListener('mouseover',changePic) ;
+	txtItems.children[i].addEventListener('mouseover', changePic);
+	txtItems.children[i].addEventListener('mouseover', changePic);
 }
 
 function changePic() {

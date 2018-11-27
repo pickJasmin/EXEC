@@ -19,13 +19,14 @@ var ulObj = document.querySelector('#mask>ul');
 console.log(ulObj);
 var str = '';
 for (i in sliderData.imageList) {
-    str+='<li id="'+sliderData.imageList[i].itemId+'" class="'+sliderData.imageList[i].itemClassName+'">'+
-    '<a href="'+sliderData.imageList[i].aHref+'">'+
-    '<img src='+sliderData.imageList[i].imgSrc+' alt="'+sliderData.imageList[i].imgAlt+'">'+
-    '</a>'+
-    '<div class="tooltip">'+
-    '<h1>'+sliderData.imageList[i].h1Content+'</h1>'+
-    '</div></li>'
+    //字符串连接
+    str += '<li id="' + sliderData.imageList[i].itemId + '" class="' + sliderData.imageList[i].itemClassName + '">' +
+        '<a href="' + sliderData.imageList[i].aHref + '">' +
+        '<img src=' + sliderData.imageList[i].imgSrc + ' alt="' + sliderData.imageList[i].imgAlt + '">' +
+        '</a>' +
+        '<div class="tooltip">' +
+        '<h1>' + sliderData.imageList[i].h1Content + '</h1>' +
+        '</div></li>'
 
 }
 ulObj.innerHTML = str;

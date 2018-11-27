@@ -1,4 +1,8 @@
-
+// localStorage.setItem("key","value");//存储变量名为key，值为value的变量 
+// localStorage.key = "value"//存储变量名为key，值为value的变量 
+// localStorage.getItem("key");//获取存储的变量key的值
+// localStorage.key;//获取存储的变量key的值 
+// localStorage.removeItem("key")//删除变量名为key的存储变量
 
 // 商品类
 class Product {
@@ -55,7 +59,7 @@ class ShoppingCart {
         }
     }
     // 将购物车数据写入本地存储中
-    setDataToLocalSatorge(cartData) {
+    setDataToLocalStorage(cartData) {
         //清除原有存储写入新列表
         localStorage.removeItem('lzzyCart');
         //写入本地存储
@@ -92,7 +96,7 @@ class ShoppingCart {
         cartData.totalQty += order.qty;
 
         // 写入localStorage
-        this.setDataToLocalSatorge(cartData);
+        this.setDataToLocalStorage(cartData);
     }
     // 获取购物车中的订单列表
     getSelectedList() {
@@ -111,7 +115,7 @@ class ShoppingCart {
     }
     // 获取选中商品的总数量
     getSelectedQty() {
-        let cartData = this.getDataFromLocalStorage();       
+        let cartData = this.getDataFromLocalStorage();
         let orderList = cartData.orderList;
         let selectedQty = 0;
         for (const key in orderList) {
@@ -123,7 +127,7 @@ class ShoppingCart {
     }
     // 获取选中商品的总价格
     getSelectedAmount() {
-        let cartData = this.getDataFromLocalStorage();       
+        let cartData = this.getDataFromLocalStorage();
         let orderList = cartData.orderList;
         let selectedAmount = 0;
 
@@ -133,5 +137,68 @@ class ShoppingCart {
             }
         }
         return selectedAmount;
-    }   
+    }
+
+    // 设置购物车订单项选择状态
+    setItemSelectStatus(id, selectStatus) {
+        // 获取购物车数据
+        let cartData = this.getDataFromLocalStorage();
+        let orderList = cartData.orderList;
+        // 查找id对应的订单
+        let order = this.find(id, orderList);
+
+        //判断位置，位置为空报错提示，如果不为空就设置状态
+        if (order == null) {
+            // 没有找到id
+            console.log('订单id有误');
+        } else {
+            // 找到对应id
+            order.selectStatus = selectStatus;
+            // 写入本地存储
+            this.setDataToLocalStorage(cartData);
+        }
+    }
+
+    // 查找指定id的订单
+    find(id, orderList) {
+        for (const i in orderList) {
+            if (id == orderList[i].id) {
+                return orderList[i];
+            }
+        }
+        return null;
+    }
+
+
+    // 删除指定ID商品
+    deleteItem(id) {
+        // 获取购物车数据
+        let cartData = this.getDataFromLocalStorage();
+        // 获取订单列表
+        let orderList = cartData.orderList;
+        // 获取指定id的订单(要删除的订单)
+        let order = this.find(id, orderList);
+
+        //定位要删除的订单在数组中的位置
+        let index = orderList.indexOf(order, 0);
+
+        if (index == -1) {
+            // 找不到需要删除的订单
+            console.log('订单id有误');
+        } else {
+            // 删除当前订单
+            orderList.splice(index, 1);
+            // 变更总商品总件数
+            cartData.totalQty -= order.qty;
+            //变更商品总价格
+            cartData.totalAmount -= order.qty * order.price;
+            // 变更总商品件数
+            cartData.units--;
+            //数据回写购物车
+            this.setDataToLocalStorage(cartData);
+        }
+    }
+    
+
+
 }
