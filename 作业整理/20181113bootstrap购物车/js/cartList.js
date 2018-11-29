@@ -88,13 +88,32 @@ function displaySelectedTotal() {
 }
 
 
-//为相关节点注册事件
-function regEvent(){
-    //获取购物车节点
 
+// 为相关节点注册事件
+function regEvent() {
+    // 获取清空购物车节点
+    let element = cartRoot.querySelector(operatorGlobal.clearAll);
+    console.log(element);
+    // 注册单击事件触发函数
+    element.onclick = clearAllEventFun;
 }
 
-//事件触发函数
+// 清空事件触发函数
+function clearAllEventFun() {
+    cart.clearCart();
+    // 获取订单根节点
+    let cartListNode = document.querySelector('#cartList');
+    //保留样本节点
+    let ExampleNode = (document.querySelector('#orderExample')).cloneNode(true);
+    //清除订单根节点的所有元素
+    cartListNode.innerHTML = "";
+    //将样本节点挂接回列表根节点
+    cartListNode.appendChild(ExampleNode);
+    // 更新商品总数据
+    displaySelectedTotal();
+}
+//删除事件触发函数
+function deleteItemEventFun() {}
 
 //初始化事件
 function into() {
