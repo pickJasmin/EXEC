@@ -199,6 +199,40 @@ class ShoppingCart {
         }
     }
     
+    // 减少/增加指定商品的数量（+1或者-1）
+    changeQty(id, op) {
+        let cartData = this.getDataFromLocalStorage();
+        let orderList = cartData.orderList;
+        let order = this.find(id,orderList);
+        // console.log(index);
+        if (order == null) {
+            console.log('订单id有误');
+            return;
+        } else {
+            if (op == '+') {
+                //改变当前订单数量                                
+               order.qty++;
+                // 变更总商品总数
+                cartData.totalQty++;
+                //变更商品总价格
+                cartData.totalAmount +=order.price;
+            } else if (op == '-') {
+                //改变当前订单数量
+                order.qty--;
+                // 变更总商品总数
+                cartData.totalQty--;
+                //变更商品总价格
+                cartData.totalAmount -=order.price;
+            }
 
+            //数据回写购物车
+            this.setDataToLocalStorage(cartData);
+        }
+    }
+
+    getTotalUnits(){
+        let cartData=this.getDataFromLocalStorage();
+        return cartData.units;
+    }
 
 }

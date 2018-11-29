@@ -17,7 +17,7 @@
         cart.clearCart();
 
         //  创建一个商品
-        var product = new Product('01', '新款面膜', '01.jpg', 1)
+        var product = new Product('01', '新款*580435', '01.jpg', 1)
         //  创建一个订单 
         var order = new Order(product, 3, true);
         // 将订单order置入购物车（本地存储）
@@ -46,11 +46,11 @@
         console.log(cart.getSelectedQty());
         console.log(cart.getSelectedAmount());
 
-        cart.deleteItem('05');
-        cart.changeQty('03','-');
-        cart.changeQty('03','-');
-        cart.changeQty('03','-');
-        cart.changeQty('03','-');
+        // cart.deleteItem('05');
+        // cart.changeQty('03','-');
+        // cart.changeQty('03','-');
+        // cart.changeQty('03','-');
+        // cart.changeQty('03','-');
 
     </script>
 </body>

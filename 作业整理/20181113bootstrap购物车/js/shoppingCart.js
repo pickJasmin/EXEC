@@ -181,4 +181,9 @@ class ShoppingCart {
 
     }
 
+    getTotalUnits(){
+        let cartData=this.getDataFromLocalStorage();
+        return cartData.units;
+    }
+
 }
