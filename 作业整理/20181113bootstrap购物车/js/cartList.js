@@ -1,5 +1,9 @@
+// 购物车实例化
 var cart = new ShoppingCart();
-
+// 获取购物车根节点
+var cartRoot = document.querySelector('#cartRoot');
+ //找到订单列表的父元素
+var cartList = document.querySelector('#cartContent');
 
 
 
@@ -66,6 +70,11 @@ function displayOrderList() {
 
         // 移除新节点到隐藏属性 d-none
         node.classList.remove('d-none');
+
+        //给删除按钮设计一个data-id属性
+        element = node.querySelector("[data-operator='deleteItem']");
+        element.setAttribute('data-id', order.id);
+
     }
 }
 
@@ -73,6 +82,9 @@ function displayOrderList() {
 //显示已选中商品到总件数和总价格
 function displaySelectedTotal() {
 
+
+    let totalNode = cartRoot.querySelector("[data-name='units']");
+    totalNode.textContent = cart.getTotalUnits();
 
 
     //获取总数相关节点
@@ -92,32 +104,73 @@ function displaySelectedTotal() {
 // 为相关节点注册事件
 function regEvent() {
     // 获取清空购物车节点
-    let element = cartRoot.querySelector(operatorGlobal.clearAll);
+    let element = cartRoot.querySelector("[data-operator='clearAll']");
     console.log(element);
     // 注册单击事件触发函数
     element.onclick = clearAllEventFun;
+
+
+    //获取删除节点
+    element = cartRoot.querySelectorAll("[data-operator='deleteItem']");
+    console.log(element);
+    for (const key in element) {
+        //注册订单删除按钮单击事件
+
+        element[key].onclick = deleteItemEventFun;
+    }
+
+
+
+
+
 }
+
+
 
 // 清空事件触发函数
 function clearAllEventFun() {
     cart.clearCart();
     // 获取订单根节点
-    let cartListNode = document.querySelector('#cartList');
+    let cartList = document.querySelector('#cartContent');
     //保留样本节点
-    let ExampleNode = (document.querySelector('#orderExample')).cloneNode(true);
+    let Example = (document.querySelector('#orderExample')).cloneNode(true);
     //清除订单根节点的所有元素
-    cartListNode.innerHTML = "";
+    cartList.innerHTML = '';
     //将样本节点挂接回列表根节点
-    cartListNode.appendChild(ExampleNode);
+    cartList.appendChild(Example);
     // 更新商品总数据
     displaySelectedTotal();
 }
-//删除事件触发函数
-function deleteItemEventFun() {}
 
-//初始化事件
-function into() {
+
+//删除事件触发函数
+function deleteItemEventFun(e) {
+    //获取当前被单击的删除按钮
+    let button = e.target;
+    //
+    let id = button.getAttribute('data-id');
+    //删除购物车数据
+    cart.deleteItem(id);
+
+
+    //移除节点
+    let orderNode = cartList.querySelector('#');
+    // let currenItemNode = cartListNode.querySelector('[id="' + id + '"]');
+    cartListNode.removeChild(currenItemNode);
+
+    //设置总数
     displaySelectedTotal();
-    displayOrderList();
 }
-into();
+
+// 初始化函数
+function init() {
+    // 显示订单列表
+    displayOrderList();
+    // 显示总数据
+    displaySelectedTotal();
+    // 为所有操作节点注册事件
+    regEvent();
+}
+
+//调用初始化函数
+init();
