@@ -1,0 +1,74 @@
+[
+  {
+    "name" : "烘豆",
+    "price" : 0.40,
+    "image" : "beans.jpg",
+    "type" : "蔬菜"
+  },
+  {
+    "name" : "热狗",
+    "price" : 1.99,
+    "image" : "hotdogs.jpg",
+    "type" : "肉"
+  },
+  {
+    "name" : "罐头猪肉",
+    "price" : 2.85,
+    "image" : "spam.jpg",
+    "type" : "肉"
+  },
+  {
+    "name" : "炸豆泥",
+    "price" : 0.99,
+    "image" : "refried.jpg",
+    "type" : "蔬菜"
+  },
+  {
+    "name" : "云豆",
+    "price" : 0.58,
+    "image" : "kidney.jpg",
+    "type" : "蔬菜"
+  },
+  {
+    "name" : "豌豆",
+    "price" : 0.52,
+    "image" : "gardenpeas.jpg",
+    "type" : "蔬菜"
+  },
+  {
+    "name" : "豌豆泥",
+    "price" : 0.58,
+    "image" : "mushypeas.jpg",
+    "type" : "蔬菜"
+  },
+  {
+    "name" : "咸牛肉",
+    "price" : 2.39,
+    "image" : "cornedbeef.jpg",
+    "type" : "肉"
+  },
+  {
+    "name" : "西红柿汤",
+    "price" : 1.40,
+    "image" : "tomatosoup.jpg",
+    "type" : "汤"
+  },
+  {
+    "name" : "碎西红柿",
+    "price" : 0.45,
+    "image" : "tomato.jpg",
+    "type" : "蔬菜"
+  },
+  {
+    "name" : "蛋汤",
+    "price" : 1.89,
+    "image" : "chickennoodle.jpg",
+    "type" : "汤"
+  },
+  {
+    "name" : "胡萝卜和香菜汤",
+    "price" : 1.49,
+    "image" : "carrotcoriander.jpg",
+    "type" : "汤"
+  }
+]
