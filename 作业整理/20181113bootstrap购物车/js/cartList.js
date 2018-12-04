@@ -154,9 +154,9 @@ function deleteItemEventFun(e) {
 
 
     //移除节点
-    let orderNode = cartList.querySelector('#');
+    let orderNode =document.getElementById(id);
     // let currenItemNode = cartListNode.querySelector('[id="' + id + '"]');
-    cartListNode.removeChild(currenItemNode);
+    cartList.removeChild(orderNode);
 
     //设置总数
     displaySelectedTotal();
