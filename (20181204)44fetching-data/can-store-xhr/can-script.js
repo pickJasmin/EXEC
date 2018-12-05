@@ -28,7 +28,7 @@ request.send();
 //设置app逻辑，声明所需变量，包含所有其他函数
 function initialize() {
   // grab the UI elements that we need to manipulate
-  //获取我们需要操作的UI元素
+  //获取我们需要操作的节点
   var category = document.querySelector('#category');
   var searchTerm = document.querySelector('#searchTerm');
   var searchBtn = document.querySelector('button');
@@ -61,6 +61,7 @@ function initialize() {
 
   // Set both to equal an empty array, in time for searches to be run
   //设置两个值等于一个空数组，以便及时执行搜索
+  //放分类商品
   categoryGroup = [];
   finalGroup = [];
 
@@ -68,13 +69,14 @@ function initialize() {
   // a search running to select the category of products we want to display
   //当单击search按钮时，调用selectCategory()启动
   //搜索正在运行，以选择要显示的产品类别
+  //为单击按钮做触发事件
   searchBtn.onclick = selectCategory;
-
+  //e为单击事件
   function selectCategory(e) {
     // Use preventDefault() to stop the form submitting — that would ruin
     // the experience
     //使用preventDefault()来阻止表单提交——这样会破坏表单
-    //经验
+    //对点击的默认事件进行阻止
     e.preventDefault();
 
     // Set these back to empty arrays, to clear out the previous search
@@ -87,7 +89,7 @@ function initialize() {
     // it again — just return out of the function
     //如果类别和搜索词与上次相同，a
     //搜索被运行了，结果会是一样的，所以没有运行的意义
-    //再次-从函数中返回
+    //再次-从函数中返回，trim()去掉前后空格
     if (category.value === lastCategory && searchTerm.value.trim() === lastSearch) {
       return;
     } else {
@@ -177,8 +179,11 @@ function initialize() {
     //删除<main>元素之前的内容
 
     while (main.firstChild) {
+      //removeChild从子节点列表中删除某个节点
+      //把原有的内容清空
       main.removeChild(main.firstChild);
     }
+    // main.innerHTML="";
 
     // if no products match the search term, display a "No results to display" message
     //如果没有产品匹配搜索词，则显示“没有结果显示”消息
