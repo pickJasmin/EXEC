@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+     html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, em, button 
+      {
+          margin: 0;
+          padding: 0;
+      }
+      body
+      {
+          font: 12px/1.5 "Microsoft yahei";
+          color: #333;
+          background-color: #fff;
+      }
+      .mod
+      {
+          width: 944px;
+          margin: 20px auto;
+          overflow: hidden;
+          /* background-color: #eee; */
+      }
+      ul
+      {
+         list-style: none;
+      }
+      /* .mod::after
+      {
+          content: "";
+          display: table;
+          clear: both;
+      } */
+      a
+      {
+          color: #3983e5;
+          text-decoration: none;
+      }
+      .mod .top
+      {
+          height: 54px;
+          /* background-color: #444; */
+          border-bottom: 2px blue solid;
+          text-align: left;
+      }
+      .mod .top .title
+      {
+          font-family: "微软雅黑";
+          font-size: 130%;
+          font-style: normal;
+          position: relative;
+      }
+      .mod .top .title li
+      {
+          float: left;
+          margin-right: 30px;
+          height: 36px;
+          line-height:75px;
+      }
+      .mod .top .title a
+      {
+          color: #333;
+      }
+      .mod .top .title .current a
+      {
+          color: #3983e5;
+      }
+      .mod .top .title i
+      {
+          position: absolute;
+          border-bottom:6px solid #3983e5;
+          border-top: 0 none;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          left: 1%;
+          bottom: -54px;
+      }
+      .mod .top .title .label-en
+      {
+          position: absolute;
+          background-color: orange;
+          color: #fff;
+          font-weight: normal;
+          font-size: 8px;
+          padding: 0 2px;
+          line-height: 16px;
+          top: 10px;
+          left: 515px;
+      }
+      .mod .top .title .triangle
+      {
+          position: absolute;
+          border-style: solid;
+          top: 16px;
+          right: 0px;
+          border-color: orange transparent transparent orange;
+
+
+      }
+      .mod .mod-content
+      {
+          height: 312px;
+          border: 1px solid #e0e0e0;
+          border-top-width: 0px;
+          position: relative;
+          overflow: hidden;
+      }
+      .mod .left
+      {
+          width: 182px;
+          height: 312px;
+          float: left;
+          border-right: 1px dotted #a3a3a3;
+      }
+      .mod .right
+      {
+          height: 312px;
+          float: left;
+          /* width: 759px; */
+          margin-left: 8px;
+          padding: 12px 17px 13px 15px;
+          /* background-color: #666; */
+          width: 700px;
+      }
+      .mod .right .select li:first-child
+      {
+          width: 37px;
+          height: 16px;
+          background-color: #3983e5;
+          border-radius: 2px;
+          color: #fff;
+          text-align: center;
+          line-height: 16px;
+          font-weight: bold;
+      }
+      .mod .select li.active a
+      {
+          font-size: 10px;
+          color: #fff;
+      }
+      .mod .select li.set
+      {
+          float: left;
+          margin-left: 50px;
+          margin-top: -17px;
+          display: block;
+          width: 54px;
+          
+      }
+      .mod .select li.set:hover
+      {
+        background-color: burlywood;
+      }
+      .mod .select 
+      {
+          overflow: auto;
+      }
+      .mod .right .more
+      {
+          position: absolute;
+          top: 12px;
+          right: 17px;
+          padding: 2px 10px;
+      }
+      .mod .right .more:hover
+      {
+          border: 1px solid #3983e5;
+          border-radius: 5px;
+      }
+      .mod .product
+      {
+          margin-top: 10px;
+      }
+      .mod .product li
+      {
+          float: left;
+          width: 166px;
+          height: 117px;
+          margin: 0px 9px 18px 0px;
+          /* background-color: aqua; */
+      }
+      .mod .product .product-item img:hover
+      {
+          -ms-transform: scale(1.05);
+          -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+          transition: transform 0.3s ease 0s;
+      }
+      .picture
+      {
+          width: 166px;
+          height: 90px;
+      }
+      .form_of_written
+      {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          color: #333;
+          font-family: "微软雅黑";
+      }
+      .item-name
+      {
+          text-align: right;
+          color: #333;
+          text-align: right;
+      }
+      dfn
+      {
+          vertical-align: 4px;
+          color: #333;
+          font-size:60%;
+          font-weight:normal;
+          font-style: normal;
+      }
+      .price
+      {
+         color: #f60;
+         font-weight:bolder;
+         font-size: 150%;
+      }
+      .price_info
+      {
+        color: #333;
+        font-size:60%;
+        font-weight:normal;
+        font-style: normal;
+      }
+      .left dl
+      {
+          margin: 0px 0px 7px 15px;
+      }
+      .mod-content .left .keyword-short dt
+      {
+          line-height: 1.5;
+          padding: 4px 0 0 0;
+          font-style: normal;
+          font-variant: normal;
+          font-weight: 700;
+          font-size: 14px;
+          font-family: "Microsoft yahei";
+      }
+      .mod-content .left .keyword-short
+      {
+          overflow: hidden;
+          position: relative;
+      }
+      .mod-content .left .keyword-short dd
+      {
+          margin-left: -6px;
+          white-space: nowrap;       
+      }
+      .mod-content .left .keyword-short span
+      {
+          float: left;
+          display: block;
+          border-right: 1px inset #ececec;
+          line-height: 1;
+          height: auto;
+          padding: 0 8px;
+          margin: 7px 0 5px;
+          text-align: left;
+      }
+      .mod-content .left .keyword-short span a
+      {
+         color: #333;
+         font-family: "微软雅黑";
+      }
+    </style>
+</head>
+<body>
+    <div class="mod">
+        <div class="top">
+            <ul class="title">
+                <li class="current"><a href="#">热门</a>
+                    <i></i>
+                </li>
+                <li><a href="#">特卖汇</a></li>
+                <li><a href="#">出境游</a></li>
+                <li><a href="#">境内游</a></li>
+                <li><a href="#">周边游</a></li>
+                <li><a href="#">邮轮</a></li>
+                <li><a href="#">门票</a></li>
+                <li><a href="#">主题游</a>
+                    <i></i>
+                    <b class="label-en">
+                        <em>new</em>
+                        <em class="triangle"></em>
+                    </b>
+                </li>
+                <li><a href="#">高端游</a></li>
+            </ul>
+        </div>
+
+
+        <div class="mod-content">
+            <div class="left">
+                 <dl class="keyword-short">
+                     <dt>户外活动</dt>
+                         <dd>
+                             <span class="entrance-item" title="徒步登山">
+                                 <a href="http://vacations.ctrip.com/themetravel/tubu#ctm_ref=vdc_ctm_9#ctm_ref=ssc_hp_tour_tht_txt_02">徒步登山</a>
+                             </span>
+                             <span class="entrance-item" title="潜水">
+                                 <a href="http://vacations.ctrip.com/themetravel/qianshui#ctm_ref=vdc_ctm_9#ctm_ref=ssc_hp_tour_tht_txt_02">潜水</a>
+                             </span>
+                             <span class="entrance-item" title="高尔夫">
+                                <a href="http://vacations.ctrip.com/themetravel/gaoerfu#ctm_ref=vdc_ctm_9#ctm_ref=ssc_hp_tour_tht_txt_02">高尔夫</a>
+                             </span>
+                             <span class="entrance-item" title="骑行">
+                                <a href="http://vacations.ctrip.com/themetravel/qixing#ctm_ref=vdc_ctm_9#ctm_ref=ssc_hp_tour_tht_txt_02">骑行</a>
+                             </span>
+                             <span class="entrance-item" title="游艇帆船">
+                                 <a href="http://vacations.ctrip.com/themetravel/youtingfanchuan#ctm_ref=vdc_ctm_9#ctm_ref=ssc_hp_tour_tht_txt_02">游艇帆船</a>
+                             </span>
+                             <span class="entrance-item" title="高空项目">
+                                 <a href="http://vacations.ctrip.com/themetravel/gaokongxiangmu#ctm_ref=vdc_ctm_9#ctm_ref=ssc_hp_tour_tht_txt_02">高空项目</a>
+                             </span>
+                             <span class="entrance-item" title="滑雪">
+                                 <a href="http://vacations.ctrip.com/themetravel/huaxue#ctm_ref=vdc_ctm_9#ctm_ref=ssc_hp_tour_tht_txt_02">滑雪</a>
+                             </span>
+                         </dd>
+                 </dl>
+
+                 <dl class="keyword-short">
+                     <dt>人文探索</dt>
+                         <dd>
+                             <span class="entrance-item" title="深度摄影">
+                                 <a href="http://vacations.ctrip.com/themetravel/shendusheying#ctm_ref=vdc_ctm_9#ctm_ref=ssc_hp_tour_tht_txt_03">深度摄影</a>
+                             </span>
+                             <span class="entrance-item" title="越野自驾">
+                                 <a href="http://vacations.ctrip.com/themetravel/yueyezijia#ctm_ref=vdc_ctm_9#ctm_ref=ssc_hp_tour_tht_txt_03">越野自驾</a>
+                             </span>
+                             <span class="entrance-item" title="极地探索">
+                                 <a href="http://vacations.ctrip.com/themetravel/jiditansuo#ctm_ref=vdc_ctm_9#ctm_ref=ssc_hp_tour_tht_txt_03">极地探索</a>
+                             </span>
+                         </dd>
+                 </dl>
+
+                 <dl class="keyword-short">
+                     <dt>赛事庆典</dt>
+                     <dd>
+                        <span class="entrance-item" title="体育赛事">
+                            <a href="http://vacations.ctrip.com/themetravel/tiyusaishi#ctm_ref=vdc_ctm_9#ctm_ref=ssc_hp_tour_tht_txt_04">体育赛事</a>
+                        </span>
+                        <span class="entrance-item" title="旅拍写真">
+                            <a href="http://vacations.ctrip.com/themetravel/hunshaxiezhen#ctm_ref=vdc_ctm_9#ctm_ref=ssc_hp_tour_tht_txt_04">旅拍写真</a>
+                        </span>
+                        <span class="entrance-item" title="旅游婚礼">
+                            <a href="http://vacations.ctrip.com/themetravel/lvyouhunli#ctm_ref=vdc_ctm_9#ctm_ref=ssc_hp_tour_tht_txt_04">旅游婚礼</a>
+                        </span>
+                     </dd>
+                 </dl>
+                
+                 <dl class="keyword-short">
+                    <dt>旅居度假</dt>
+                    <dd>
+                       <span class="entrance-item" title="成长体验">
+                           <a href="http://vacations.ctrip.com/themetravel/chengzhangtiyan#ctm_ref=vdc_ctm_9#ctm_ref=ssc_hp_tour_tht_txt_05">成长体验</a>
+                       </span>
+                       <span class="entrance-item" title="奢旅生活">
+                           <a href="http://vacations.ctrip.com/themetravel/lvjushenghuo#ctm_ref=vdc_ctm_9#ctm_ref=ssc_hp_tour_tht_txt_05">奢旅生活</a>
+                       </span>
+                    </dd>
+                </dl>
+
+                <dl class="keyword-short">
+                    <dt>健康养生</dt>
+                    <dd>
+                       <span class="entrance-item" title="禅修养生">
+                           <a href="http://vacations.ctrip.com/themetravel/chanxiuyangsheng#ctm_ref=vdc_ctm_9#ctm_ref=ssc_hp_tour_tht_txt_06">禅修养生</a>
+                       </span>
+                    </dd>
+                </dl>
+            </div>
+ 
+            <div class="right">
+                <ul class="select">
+                   <li class="active"><a href="#">精选</a></li>
+                   <li><a href="#" class="more">更多主题游》</a></li> 
+                </ul>
+                <ul class="product">
+                   <li class="product-item" title="abc">
+                       <a href="#">
+                           <div>
+                               <img src="../61钟强/a.png" class="picture">
+                           </div>
+                           <p class="form_of_written">体育赛事·【英格兰超级足球联赛-场次任选】8天7晚-去你的梦幻主场感受如此怎能不爱足球观赛之行，英伦生活+城市漫游+网红餐厅，一杯经典英式早茶开始你的大不列颠之旅</p>
+                           <p class="item-name">
+                               <span class="price">
+                                   <dfn>￥</dfn>
+                                   17088
+                                   <i class="price_info">起</i>
+                               </span>
+                           </p>
+                       </a>
+                   </li>
+
+                   <li class="product-item" title="abc">
+                    <a href="#">
+                        <div>
+                            <img src="../61钟强/b.jpg" class="picture">
+                        </div>
+                        <p class="form_of_written">徒步登山·【世界经典徒步路线】布恩山+ABC 去户外徒步者的天堂徒步喜马拉雅，看世界的高峰，赏醉美风景</p>
+                        <p class="item-name">
+                            <span class="price">
+                                <dfn></dfn>
+                                实时计价
+                                <!-- <i class="price_info">起</i> -->
+                            </span>
+                        </p>
+                    </a>
+                   </li>
+
+                   <li class="product-item" title="abc">
+                    <a href="#">
+                        <div>
+                            <img src="../61钟强/c.jpg" class="picture">
+                        </div>
+                        <p class="form_of_written">奢旅生活·【莫文蔚结婚古堡酒店+世界小型酒店+立鼎世酒店集团旗下酒店+设计感酒店】意大利托斯卡纳纵情声色10日游——打卡米其林餐厅+造访三大博物馆+探寻文艺复兴发源地+造梦天空之城到上帝之城</p>
+                        <p class="item-name">
+                            <span class="price">
+                                <dfn>￥</dfn>
+                                45500
+                                <i class="price_info">起</i>
+                            </span>
+                        </p>
+                    </a>
+                   </li>
+
+                   <li class="product-item" title="abc">
+                    <a href="#">
+                        <div>
+                            <img src="../61钟强/d.jpg" class="picture">
+                        </div>
+                        <p class="form_of_written">潜水·【度假胜地长滩岛·沉睡半年再度归来！】五星PADI专业中文潜水教学，体验潜水/初级ow/进阶aow考证 三选一，多地直飞，四星度假村连住</p>
+                        <p class="item-name">
+                            <span class="price">
+                                <dfn>￥</dfn>
+                                5990
+                                <i class="price_info">起</i>
+                            </span>
+                        </p>
+                    </a>
+                   </li>
+
+                   <li class="product-item" title="abc">
+                    <a href="#">
+                        <div>
+                            <img src="../61钟强/e.png" class="picture">
+                        </div>
+                        <p class="form_of_written">滑雪·【北欧两国深度私家小团，纯净世界邂逅幸运之光】放肆滑雪9天8晚，专业教练指导各等级雪道畅玩，北极圈超长停留，还有钓雪蟹，拉雪橇，冰砖桑拿，网红玻璃木屋，超性价比，刷爆朋友圈</p>
+                        <p class="item-name">
+                            <span class="price">
+                                <dfn>￥</dfn>
+                                28500
+                                <i class="price_info">起</i>
+                            </span>
+                        </p>
+                    </a>
+                   </li>
+
+                   <li class="product-item" title="abc">
+                    <a href="#">
+                        <div>
+                            <img src="../61钟强/f.jpg" class="picture">
+                        </div>
+                        <p class="form_of_written">越野自驾·澳洲大洋路9日亲子游·自驾深度体验，专业自驾向导领航</p>
+                        <p class="item-name">
+                            <span class="price">
+                                <dfn></dfn>
+                                实时计价
+                                <!-- <i class="price_info">起</i> -->
+                            </span>
+                        </p>
+                    </a>
+                   </li>
+
+                   <li class="product-item" title="abc">
+                    <a href="#">
+                        <div>
+                            <img src="../61钟强/g.jpg" class="picture">
+                        </div>
+                        <p class="form_of_written">高空项目·巴厘岛7天6晚 高空冒险刺激之旅  网红秋千 情人崖直升机  浪漫摇曳伞  海景滑翔伞  蓝梦岛出海  树顶冒险公园  精油SPA 抖音同款  惊艳你的朋友圈  是时候展现真正的技术了</p>
+                        <p class="item-name">
+                            <span class="price">
+                                <dfn>￥</dfn>
+                                17109
+                                <i class="price_info">起</i>
+                            </span>
+                        </p>
+                    </a>
+                   </li>
+
+                   <li class="product-item" title="abc">
+                    <a href="#">
+                        <div>
+                            <img src="../61钟强/h.jpg" class="picture">
+                        </div>
+                        <p class="form_of_written">成长体验·新加坡+乐高世界8日深度亲子探索之旅，乐高乐园+乐高酒店+空中花园+大学+科学馆+动物园+马来美食+巨大垂直花园+环球影城+特色人文冲击+缤纷夜景</p>
+                        <p class="item-name">
+                            <span class="price">
+                                <dfn>￥</dfn>
+                                12938
+                                <i class="price_info">起</i>
+                            </span>
+                        </p>
+                    </a>
+                   </li>
+                 </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="mod">
+            <div class="top">
+                <ul class="title">
+                    <li class="current"><a href="#">当地玩乐 • 出境</a>
+                        <i></i>
+                    </li>
+                    <li><a href="#"> 当地玩乐 • 境内</a></li>
+                </ul>
+            </div>
+    
+    
+            <div class="mod-content">
+                <div class="left">
+                     <dl class="keyword-short">
+                         <dt>热门目的地</dt>
+                             <dd>
+                                 <span class="entrance-item" title="普吉岛">
+                                     <a href="http://huodong.ctrip.com/activity/search/?keyword=%E6%99%AE%E5%90%89%E5%B2%9B&filters=dc364#ctm_ref=ssc_hp_ply_sni_txt_2">普吉岛</a>
+                                 </span>
+                                 <span class="entrance-item" title="曼谷">
+                                     <a href="http://huodong.ctrip.com/activity/search/?keyword=%E6%9B%BC%E8%B0%B7&filters=dc191#ctm_ref=ssc_hp_ply_sni_txt_2">曼谷</a>
+                                 </span>
+                                 <span class="entrance-item" title="东京">
+                                    <a href="http://huodong.ctrip.com/activity/search/?keyword=%E4%B8%9C%E4%BA%AC&filters=dc294#ctm_ref=ssc_hp_ply_sni_txt_2">东京</a>
+                                 </span>
+                                 <span class="entrance-item" title="清迈">
+                                    <a href="http://huodong.ctrip.com/activity/search/?keyword=%E6%B8%85%E8%BF%88&filters=dc209#ctm_ref=ssc_hp_ply_sni_txt_2">清迈</a>
+                                 </span>
+                                 <span class="entrance-item" title="香港">
+                                     <a href="http://huodong.ctrip.com/activity/search/?keyword=%E9%A6%99%E6%B8%AF&filters=dc38#ctm_ref=ssc_hp_ply_sni_txt_2">香港</a>
+                                 </span>
+                                 <span class="entrance-item" title="芽庄">
+                                     <a href="http://vacations.ctrip.com/themetravel/gaokongxiangmu#ctm_ref=vdc_ctm_9#ctm_ref=ssc_hp_tour_tht_txt_02">芽庄</a>
+                                 </span>
+                                 <span class="entrance-item" title="巴厘岛">
+                                     <a href="http://huodong.ctrip.com/activity/search/?keyword=%E5%B7%B4%E5%8E%98%E5%B2%9B&filters=dc438#ctm_ref=ssc_hp_ply_sni_txt_2">巴厘岛</a>
+                                 </span>
+                                 <span class="entrance-item" title="沙巴">
+                                      <a href="#">沙巴</a>
+                                 </span>
+                                 <span class="entrance-item" title="岘港">
+                                      <a href="#">岘港</a>
+                                 </span>
+                                 <span class="entrance-item" title="迪拜">
+                                      <a href="#">迪拜</a>
+                                 </span>
+                                 <span class="entrance-item" title="澳门">
+                                       <a href="#">澳门</a>
+                                 </span>
+                                 <span class="entrance-item" title="墨尔本">
+                                        <a href="#">墨尔本</a>
+                                 </span>
+                                 <span class="entrance-item" title="冲绳">
+                                        <a href="#">冲绳</a>
+                                </span>
+                                <span class="entrance-item" title="悉尼">
+                                        <a href="#">悉尼</a>
+                                </span>
+                                <span class="entrance-item" title="暹粒">
+                                        <a href="#">暹粒</a>
+                                </span>
+                                <span class="entrance-item" title="新加坡">
+                                        <a href="#">新加坡</a>
+                                </span>
+                                <span class="entrance-item" title="台北">
+                                        <a href="#">台北</a>
+                                </span>
+                             </dd>
+                     </dl>
+                </div>
+     
+                <div class="right">
+                    <ul class="select">
+                       <li class="active"><a href="#">一日游</a></li>
+                       <li class="set"><a href="#">演出/赛事</a></li>
+                       <li class="set"><a href="#">交通接驳</a></li>
+                       <li class="set"><a href="#">当地美食</a></li>
+                       <li class="set"><a href="#">游船观光</a></li>
+                       <li class="set"><a href="#">SPA水疗</a></li>
+                       <li class="set"><a href="#">特色体验</a></li>
+                       <li><a href="#" class="more">更多主题游》</a></li> 
+                    </ul>
+                    <ul class="product">
+                       <li class="product-item" title="abc">
+                           <a href="#">
+                               <div>
+                                   <img src="../61钟强/1.jpg" class="picture">
+                               </div>
+                               <p class="form_of_written">日本冲绳县万座毛+古宇利岛+冲绳美丽海水族馆+北谷町美国村一日游【微信+群赠水族馆票中文导游】</p>
+                               <p class="item-name">
+                                   <span class="price">
+                                       <dfn>￥</dfn>
+                                       195
+                                       <i class="price_info">起</i>
+                                   </span>
+                               </p>
+                           </a>
+                       </li>
+    
+                       <li class="product-item" title="abc">
+                        <a href="#">
+                            <div>
+                                <img src="../61钟强/2.jpg" class="picture">
+                            </div>
+                            <p class="form_of_written">清莱白庙+黑庙+蓝庙一日游【领券立减奔驰大巴躺着去 美味猪脚饭/9人VIP】</p>
+                            <p class="item-name">
+                                <span class="price">
+                                    <dfn>￥</dfn>
+                                    139
+                                 <i class="price_info">起</i>
+                                </span>
+                            </p>
+                        </a>
+                       </li>
+    
+                       <li class="product-item" title="abc">
+                        <a href="#">
+                            <div>
+                                <img src="../61钟强/3.jpg" class="picture">
+                            </div>
+                            <p class="form_of_written">泰国曼谷丹嫩沙多水上集市+美功铁道市场半日游【限量促销/中文导游/可选骑大象】</p>
+                            <p class="item-name">
+                                <span class="price">
+                                    <dfn>￥</dfn>
+                                    65
+                                    <i class="price_info">起</i>
+                                </span>
+                            </p>
+                        </a>
+                       </li>
+    
+                       <li class="product-item" title="abc">
+                        <a href="#">
+                            <div>
+                                <img src="../61钟强/4.jpg" class="picture">
+                            </div>
+                            <p class="form_of_written">沙巴Kawa红树林一日游【欢度国庆活动+清真寺+萤火虫++1元接/送机】</p>
+                            <p class="item-name">
+                                <span class="price">
+                                    <dfn>￥</dfn>
+                                    148
+                                    <i class="price_info">起</i>
+                                </span>
+                            </p>
+                        </a>
+                       </li>
+                     </ul>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>

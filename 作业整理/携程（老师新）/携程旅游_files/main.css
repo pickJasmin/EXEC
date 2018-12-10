@@ -1,0 +1,247 @@
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, em, button {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 12px/1.5 "Microsoft yahei", arial, Simsun, sans-serif;
+    color: #333;
+    background-color: #fff;
+}
+
+ul{
+    list-style: none;
+}
+a{
+    color: #3983e5;
+    text-decoration: none;
+}
+
+image{
+    border: 0px;
+    vertical-align: middle;
+}
+
+.i_index_next,.icon_hot{
+    display: inline-block;
+    overflow: hidden;
+    background: url(images/un_index_20180209.png) no-repeat; 
+    vertical-align: middle;
+}
+.mod{   
+    width: 1080px;
+    margin: 20px auto ; 
+    /* height: 440px; */
+    overflow: hidden;
+}
+.mod a{
+    color: #666;
+}
+
+.mod .top{
+    height: 54px;    
+    background-color: #3983e5;
+}
+
+.mod .mod-content{
+    height:375px;
+    border:1px solid #E0E0E0;
+    border-top-width: 0px;
+    position: relative;
+    overflow: hidden;
+}
+
+.mod .left{
+    /* height:312px; */
+    float:left;
+    width: 187px;
+    padding: 15px 20px;
+    overflow: hidden;
+
+    /* border-right:1px dotted #A3A3A3; */
+}
+
+.mod .right{
+    /* height:375px; */
+    /* float:left; */
+    /* width: 759px; */   
+    margin-left: 222px;
+    padding: 12px 0px 0px 15px;
+    /* background-color: #666; */
+    border-left: 1px dotted #a3a3a3;
+} 
+
+.mod .select li:first-child{
+   width: 37px;
+   height: 16px;
+   background-color: #3983e5;
+   border-radius: 2px;
+   color: #fff;
+   font-size: 10px;
+   text-align: center;
+   line-height: 16px;
+  }
+
+.mod .select .active a{
+    color:#fff;
+    font-size: 12px;
+} 
+
+.mod .right .more{
+    position: absolute;
+    top:9px;
+    right:17px;
+    padding:2px  10px;
+
+}
+
+.more:hover {
+    top: 6px;
+    right: 6px;
+    border: 1px solid #3983e5;
+    border-radius: 3px;
+    padding: 2px 10px;
+}
+
+
+
+.i_index_next{
+   
+    width: 6px;
+    height: 11px;
+    vertical-align: -1px;
+    background-position: -6px -32px;
+    margin-left: 5px;
+}
+
+.mod .product{
+    margin-top:8px;
+    overflow: hidden;
+}
+
+ .product-item{
+    float:left;
+    width: 200px;
+    /* height:127px; */
+    margin:0px 10px 10px 0px;  
+    overflow: hidden;
+}
+
+
+.product-item {
+    display: block;
+    color:#666;
+}
+
+.product-item:hover{
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .25);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, .25);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .25);
+    
+}
+
+.item-thumbnail{
+    width: 100%;
+    height:110px;
+    overflow: hidden;
+}
+.item-thumbnail img{
+    width: 100%;
+    /* height:90px; */
+    transition: transform 0.3s ease 0s;
+}
+
+a:hover .item-thumbnail img {
+    /* -webkit-transform: scale(1.05); */
+    transform: scale(1.05);
+}
+
+.item-name{
+    height: 20px;
+    line-height: 20px;
+    padding: 0 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.item-info{
+    text-align: right;
+    height: 35px;
+    padding: 0 5px;
+}
+
+.price{
+    font: 22px/1.5 tahoma;
+    color: #f60;
+}
+
+.price dfn {
+    vertical-align: 7px;
+    font: 12px/1.5 arial;
+    color: #666;
+}
+
+.price i {
+    margin-left: 3px;
+    vertical-align: 2px;
+    font: 12px/1.5 "Microsoft yahei";
+    color: #666;
+}
+
+.no-price {
+    font: 14px/33px "Microsoft yahei";
+}
+
+/* 响应式布局 */
+@media screen and (max-width:1200px){
+    .mod{
+        width: 920px;
+    }
+
+    .product-item{
+
+        margin:0px 20px 10px 0px;  
+
+    }
+    .mod .right{
+        padding: 12px 0px 0px 30px;
+    }
+}
+.entrance dl{
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.entrance dt {   
+     font: 700 14px/24px "Microsoft yahei";
+}
+
+.entrance dd {
+    margin-left: -10px;
+    overflow: hidden;
+    zoom: 1;
+}
+.entrance .entrance-item {
+    position: relative;
+    float: left;
+    display: block;
+    border-left: 1px solid #ececec;
+    line-height: 1;
+    height: auto;
+    padding: 0 8px;
+    margin: 7px 0 5px;
+}
+.entrance a:hover{
+    color:#3983e5;
+}
+.icon_hot {
+    width: 11px;
+    height: 11px;
+    background-position: -16px -32px;
+}
+.entrance .entrance-item .icon_hot {
+    position: absolute;
+    top: -6px;
+    right: 3px;
+}

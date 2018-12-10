@@ -1,0 +1,109 @@
+
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, em, button {
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+
+.slider{
+    width: 100%;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#images{
+    /* position: relative;
+    background-color:red; */
+    width: 100%;
+   
+}
+
+#images>a{
+    transition:  opacity 1s linear;
+    /* display: block; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.displayImg{
+    /* display: block; */
+    opacity: 1;
+}
+
+.hiddenImg{
+ /* display: none; */
+ opacity: 0;
+}
+img{
+    transition: opacity 1s linear;
+    opacity: 1;
+    width:  100%;
+    height: 300px;    
+    margin: 0 auto;
+}
+
+.btn{
+    position: absolute;
+    top:50%;
+    width: 60px;
+    height: 30px;
+    background-color: #000;
+    opacity: 0.3;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    line-height: 30px;
+    background-position: center;
+}
+
+.rightButton{
+    right:20px;
+}
+
+.leftButton{
+    left:20px;
+}
+
+.txt-box{
+    width: 100%;
+    /* background-color: #000; */
+    /* opacity: 0.3; */
+    height:5px;
+    position: absolute;    
+    left: 0;
+    bottom: 0;
+    display: flex;
+    z-index: 5;
+    transition: height 0.1s linear 0s;
+}
+
+.txt-box:hover{
+    height: 40px;
+}
+
+.txtItem{
+    width: 12.5%;
+    margin-right: 2px;
+    color: #fff;
+    text-align: center;    
+}
+.txtItem:last-child{
+    margin:0;
+}
+
+.txtItem:hover,.heighlightColor{
+    background-color:rgb(252, 164, 2);
+}
+.normalColor{
+    background-color:rgba(0,0,0,0.5);
+}
+
+
+
+
+

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>头部</title>
+    <link rel="stylesheet" type="text/css" href="./iconfont.css">
+    <style>
+        body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, img {
+            margin:0;
+            padding:0;
+            border:0;
+            list-style: none;
+        }
+        body{
+            font-family:"微软雅黑",Arial, Helvetica, sans-serif; 
+            font-size:14px;
+            display:flex;
+            flex-shrink: inherit;
+        }
+        
+        .box{
+            width: 100%;
+            height: 680px;
+            overflow: hidden;
+            position: relative;
+            display:flex;
+        }
+        a{
+            color:#999;
+            text-decoration: none;
+        }
+        a:hover{
+            color:#fff;
+        }
+        .box video{
+	        width:100%;
+	        min-width: 1280px;
+	        position: absolute;
+	        top:50%;
+	        left:50%;
+	        transform:translate(-50%,-50%);
+        }   
+        .box header{
+	        width:100%;
+	        height:40px;
+	        background: #333;
+	        z-index: 999;
+	        position: absolute;
+        }    
+        .box header .con{
+	        width:1030px;
+	        height:40px;
+	        margin:0 auto;
+        }
+        .box header .left{
+	        width:75px;
+	        height:20px;
+	        background:url(images/logo.png) 0 0 no-repeat;
+	        margin-top: 10px;
+	        float: left;
+        }
+
+        .box header .right{
+	        margin-top: 10px;
+	        float: right;
+	        font-family: "freshskin";
+        }
+        .box header .right a{margin-right: 10px;}
+        .box nav{
+	        width:100%;
+	        height:90px;
+	        background: rgba(0,0,0,0.2);
+	        z-index: 1000;
+	        position: absolute;
+	        top:40px;
+	        border-bottom: 1px solid #fff;
+        }
+        .box nav ul{
+            width:1030px;
+            height:90px;
+            margin:0 auto;
+            position: relative;
+        }
+        .box nav ul li{
+            float: left;
+            margin-right: 19%;
+        }
+        .box nav ul .left:hover aside{display: block;}
+        .box nav ul .left a{
+            display: block;
+            height:90px;
+            line-height: 90px;
+            font-size: 20px;
+            color:#fff;
+        }
+        .box nav ul .left a img{vertical-align: middle;}
+        .box nav ul .left a span{margin:0 10px;}
+        .box aside{
+            display: none;
+            width:380px;
+            height:560px;
+            background: rgba(0,0,0,0.3);
+            position: absolute;
+            left:0;
+            top:90px;
+            z-index: 1500;
+            color:#fff;
+        }
+        .box aside span{
+            width:20px;
+            height:14px;
+            background:url(../images/liebiao.png) 0 0 no-repeat;
+            position: absolute;
+            left:50px;
+            top:0;
+        }
+        .box aside ol{
+            width:155px;
+            float: left;
+        }
+        .box aside ol li{
+            width:155px;
+            height:25px;
+            line-height: 25px;
+            cursor: pointer;
+            font-family: "宋体";
+        }
+        .box aside ol li.con{
+            font-size: 16px;
+            text-indent: 0;
+            font-family: "微软雅黑";
+            padding: 10px 0;
+        }
+        .box aside ol li:hover{color:#fff;}
+        .box aside .zuo{margin:35px 0 0 68px;}
+        .box aside .you{margin-top: 35px;}
+        .box aside img{margin:10px 0 0 13px;}
+        .box nav ul .center{margin-top: 32px;}
+        .box nav ul .center input{
+            width:240px;
+            height:30px;
+            border:1px solid #fff;
+            border-radius: 15px; 
+            color:#fff;
+            line-height: 32px;
+            background: rgba(0,0,0,0);
+            padding-left: 30px;
+            box-sizing:border-box;
+            background:url(../images/search.png) no-repeat 3px 3px;
+            outline: none;/* 去掉蓝边 */
+        }
+        .box nav ul .right{
+            margin-top: 32px;
+            width:280px;
+            height:32px;
+            margin-right:0;
+            font-family: "freshskin";
+            text-align: center;
+            line-height: 32px;
+            font-size: 16px;
+        } 
+        .box nav ul .right a{
+            display: inline-block;
+            width:32px;
+            height:32px;
+            color:#fff;
+            box-shadow: 0 0 0 1px #fff inset;
+            transition:box-shadow 0.3s ease 0s; 
+            border-radius: 16px; 
+            margin-left: 30px;
+        }
+        .box nav ul .right a:hover{
+            box-shadow: 0 0 0 16px #fff inset; 
+            color:#C1DCC5;
+        }
+        .box .pic{
+            width:570px;
+            height:210px;
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%);
+            background: url(../images/wenzi.png) no-repeat;
+            text-align: center;
+        }
+        .box .pic p{
+            margin-top: 240px;
+            color:#4c8174;
+        }
+        .box .pic ul{
+            position: absolute;
+            color:#999;
+        }
+        .box .pic ul li{
+            width:180px;
+            height:56px;
+            border-radius: 28px;
+            background: #fff;
+            text-align: left;
+        }
+        .box .pic ul .one{
+            line-height: 56px;
+            position: absolute;
+            left: -1920px;
+            top:40px;
+            opacity: 0;
+            transition:all 2s ease-in 0s;
+        }
+        .box .pic ul .two{
+            line-height: 56px;
+            position: absolute;
+            left: 1920px;
+            top:40px;
+            opacity: 0;
+            transition:all 2s ease-in 0s;
+        }
+        body:hover .box .pic ul .one{
+            position: absolute;
+            left:100px;
+            top:40px;
+            opacity:0.8;
+        }
+        body:hover .box .pic ul .two{
+            position: absolute;
+            left:300px;
+            top:40px;
+            opacity:0.8;
+        }
+        .box .pic ul .one span,.box .pic ul .two span{
+            float: left;
+            width:40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 20px;
+            margin:8px 10px 0 10px;
+            box-shadow: 0 0 0 1px  #90c197 inset;
+            transition:box-shadow 0.3s ease 0s;
+            font-family: "freshskin";
+            font-weight: bold;
+            color:#90c197;
+        }
+        .box .pic ul .two span{margin:8px 30px 0 10px;}
+
+        .box .pic ul .one:hover span,.box .pic ul .two:hover span{
+            box-shadow: 0 0 0 20px #90c197 inset;
+            color:#fff;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <!-- 头部开始 -->
+        <header>
+            <div>
+                <section class="left"></section>
+                <section class="right">
+                    <a href="#">登陆</a>
+                    <a href="#">注册</a>
+                </section>
+            </div>
+        </header>
+        <!-- 头部结束 -->
+        <nav>
+            <ul>
+                <li class="left">
+                    <a class="one" href="#">
+                        <img src="images/sanxian.png" alt="">
+                        <span>选项</span>
+                        <img src="images/sanjiao.png" alt="">
+                    </a>
+                    <!-- 左侧边栏内容开始 -->
+                    <aside>
+                        <span></span>
+                        <ol class="zuo">
+                            <li class="con">护肤</li>
+                            <li>>洁面</li>
+                            <li>>爽肤水</li>
+                            <li>>精华</li>
+                            <li>>乳液</li>
+                            <li class="con">彩妆</li>
+                            <li>>BB霜</li>
+                            <li>>卸妆</li>
+                            <li>>粉底液</li>
+                            <li class="con">香氛</li>
+                            <li>>女士香水</li>
+                            <li>>男士香水</li>
+                            <li>>中性香水</li>
+                        </ol>
+                        <ol class="you">
+                            <li class="con">男士专区</li>
+                            <li>>爽肤水</li>
+                            <li>>洁面</li>
+                            <li>>面霜</li>
+                            <li>>精华</li>
+                            <li class="con">热门搜索</li>
+                            <li>>洗面奶</li>
+                            <li>>去黑头</li>
+                            <li>>隔离</li>
+                            <li>>面膜</li>
+                        </ol>
+                        <img src="images/tu1.jpg" alt="">
+                    </aside>
+                    <!-- 左侧边栏内容结束 -->
+                </li>
+                <li class="center">
+                    <form>
+                        <input type="text" value="请输入商品名称、品牌或编号">
+                    </form>
+                </li>
+                <li class="right">
+                    <a href="#"><i class="iconfont icon-kefu"></i></a>
+                    <a href="#"><i class="iconfont icon-shoucang"></i></a>
+                    <a href="#"><i class="iconfont icon-saoyisao"></i></a>
+                    <a href="#"><i class="iconfont icon-xuanzhong"></i></a>
+                    
+                </li>
+            </ul>
+        </nav>
+        <video src="video/home_loop_720p.mp4" autoplay="ture" loop="ture"></video>
+        <audio src="audio/home.ogg" autoplay="ture" loop="ture"></audio>
+        <div class="pic">
+            <p>Select the right resolution for your PC and dive in! （请为您的电脑选择正确的分辨率）</p>
+            <ul>
+                <li class="one"><span><a href="#"><i class="iconfont icon-fanhui"></i></a></span>STANDARD标准</li>
+                <li class="two"><span><a href="#"><i class="iconfont icon-fanhui"></i></a></span>HD高清</li>
+            </ul>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
