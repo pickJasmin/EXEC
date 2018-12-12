@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="../43bootstrap/js/shoppingcart.js"></script>
+    <script>
+        var cart = new ShoppingCart();
+        var p = new Product('01', '麦当劳', '01.jpg', '15');
+        // console.log(p);
+        var order = new Order(p, 2, true);
+        // console.log(order);
+        cart.addToCart(order);
+
+        p=new Product('02','蓝莓','02.jpg','5');
+        order=new Order(p,3,true);
+        cart.addToCart(order);
+
+        var cartData = new CartData();
+        //    cartData.orderList.push(order);
+        //    cartData.totalQty=order.qty;
+        //    cartData.totalAmount=order.qty*order.price;
+        //    cartData.units=1;
+
+        //    cart.setDataToLocalSatorge(cartData);
+        //    console.log(cart.getDataFromLocalStorage());
+        //    cart.addToCart(order);   
+    
+        //  var qty=new getSelectedQty();
+        console.log(cart.getSelectedQty());
+        console.log(cart.getSelectedAmount());
+        cart.srtItemSelectStatus('01',true);
+        console.log(cart.getSelectedQty());
+        console.log(cart.getSelectedAmount());
+        cart.deleteItem("01");
+
+
+    </script>
+</body>
+
+</html>

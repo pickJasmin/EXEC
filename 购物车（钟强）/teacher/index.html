@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-cn">
+
+<head>
+    <title>商品列表</title>
+    <!-- 必须要求的 meta 标签 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+</head>
+
+
+
+<body>
+    <!-- 导航开始 -->
+    <header>
+        <nav class="nav bg-light">
+            <a class="nav-link active" href="#">首页</a>
+            <a class="nav-link disabled" href="../43bootstrap/京东购物车.html">购物车<span class="badge badge-danger"  id="btn2" name="totalQty">0</span></a>
+        </nav>
+        <!-- 导航结束 -->
+        <!-- 商品列表开始 -->
+    </header>
+    <!-- <script>
+    var btn=document.querySelectorAll("span.badge")[0];            //法返回文档中匹配指定 CSS 选择器的所有元素
+     console.log(btn);                                           
+
+     var btn4=document.querySelector("#btn2");                    //*方法返回文档中匹配指定 CSS 选择器的    一个元素。
+     console.log(btn4);
+
+     var btn1=document.getElementsByClassName("badge")[0];         // 方法返回文档中所有指定类名的元素集合
+     console.log(btn1);
+ 
+     var btn2=document.getElementById("btn2");                     //方法可返回对拥有指定 ID 的第     一个对象的引用。
+     console.log(btn2);
+
+     var btn3=document.getElementsByTagName("span")[0];            //方法可返回带有指定标签名的对象的集合。
+     console.log(btn3);
+
+    //  var btn5=document.getElementsByName("totalQty")[0];          //方法可返回带有指定名称的对象的集合
+    //  console.log(btn5);
+
+    </script> -->
+    <main role="main">
+        <div class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="card-img-top" src="images/01.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text text-nowrap">30片巨补水 秋冬新款面膜</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-danger" name='increase'>+</button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger disabled" name='qty'>0</button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger" name='decrease'>-</button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger" name='addToCart'data-id="01">加入购物车</button>
+                                    </div>
+                                    <small class="text-muted text-danger" name='unitPrice'>99.00</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="card-img-top" src="images/02.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text text-nowrap overflow ">新西兰进口白金版婴幼儿奶粉</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-danger" name='increase'>+</button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger disabled" name='qty'>0</button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger" name='decrease'>-</button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger" name='addToCart'>加入购物车</button>
+                                    </div>
+                                    <small class="text-muted text-danger" name='unitPrice'>99.00</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="card-img-top" src="images/03.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text">卡耐基经典 人性的弱点</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-danger" name='increase'>+</button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger disabled" name='qty'>0</button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger" name='decrease'>-</button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger" name='addToCart'>加入购物车</button>
+                                    </div>
+                                    <small class="text-muted text-danger">99.00</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="card-img-top" src="images/04.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text">海淘耳机</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-danger" name='increase'>+</button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger disabled" name='qty'>0</button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger" name='decrease'>-</button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger" name='addToCart'>加入购物车</button>
+                                    </div>
+                                    <small class="text-muted text-danger">99.00</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+    </main>
+
+
+    <!-- 商品列表结束 -->
+
+    <!-- JavaScript -->
+    <!--首先引入 jQuery , 其次 Popper.js, 然后 Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <!-- <script src="js/main1.js"></script> -->
+</body>
+
+</html>
