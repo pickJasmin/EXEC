@@ -47,12 +47,32 @@
         console.log(cart.getSelectedAmount());
 
         cart.deleteItem('05');
-        cart.changeQty('03','-');
-        cart.changeQty('03','-');
-        cart.changeQty('03','-');
-        cart.changeQty('03','-');
-
+        cart.changeQty('03', '-');
+        cart.changeQty('03', '-');
+        cart.changeQty('03', '-');
+        cart.changeQty('03', '-');
     </script>
+
+
+    <h1></h1>
+    <div>
+        <table>
+            <tr>
+                <th>名字</th>
+                <th>工资</th>
+                <th>级别</th>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <form action="" method="POST">
+            姓名：<input type="text" id="TxtName" name="Name" value=""><br>
+            工资：<input type="text" id="TxtSalary" name="Salary" value=""><br>
+            <input type="submit" name="BtnSubmit" value="保存">
+            <input type="reset" name="BtnReset" value="重置">
+        </form>
+    </div>
 </body>
 
 </html>
