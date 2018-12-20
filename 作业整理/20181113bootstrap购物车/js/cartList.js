@@ -2,11 +2,32 @@
 var cart = new ShoppingCart();
 // 获取购物车根节点
 var cartRoot = document.querySelector('#cartRoot');
- //找到订单列表的父元素
+//找到订单列表的父元素
 var cartList = document.querySelector('#cartContent');
 
 
+const dataNameJson = {
+    "price": "[data-name='price']",
+    "qty": "[data-name='qty']",
+    "imgSrc": '[data-name="imgSrc"]',
+    "subPrice": '[data-name="subPrice"]',
+    "selectedQty": '[data-name="selectedQty"]',
+    "selectedAmount": '[data-name="selectedAmount"]',
+    "units": '[data-name="units"]'
+};
 
+const operatorNameJson = {
+    "checkItem": "[data-operator='checkItem']",
+    "increase": "[data-operator='increase']",
+    "decrease": "[data-operator='decrease']",
+    "deleteItem": "[data-operator='deleteItem']"
+
+};
+// 全局操作
+const operatorGlobal = {
+    "clearAll": "[data-operator='clearAll']",
+    "selectAll": "[data-operator='selectAll']"
+}
 
 
 
@@ -75,6 +96,31 @@ function displayOrderList() {
         element = node.querySelector("[data-operator='deleteItem']");
         element.setAttribute('data-id', order.id);
 
+
+
+
+
+        // 为加号按钮注册单击事件
+        let increaseBtns = document.querySelectorAll('[data-operator="increase"]');
+        // console.log(increaseBtns);
+        for (const key in increaseBtns) {
+            increaseBtns[key].onclick = changeQtyEventFun;
+        }
+
+        // 为减号按钮注册单击事件
+        let decreaseBtns = document.querySelectorAll('[data-operator="decrease"]');
+        // console.log(decreaseBtns);
+        for (const key in decreaseBtns) {
+            decreaseBtns[key].onclick = changeQtyEventFun;
+        }
+
+        //获取选择框设置转态
+        let checkboxNew = node.querySelector('[data-operator="checkItem"]');
+        //   console.log(checkboxNew);
+        checkboxNew.checked = order.selectStatus;
+
+
+
     }
 }
 
@@ -120,9 +166,6 @@ function regEvent() {
     }
 
 
-
-
-
 }
 
 
@@ -131,7 +174,7 @@ function regEvent() {
 function clearAllEventFun() {
     cart.clearCart();
     // 获取订单根节点
-    let cartList = document.querySelector('#cartContent');
+    // let cartList = document.querySelector('#cartContent');
     //保留样本节点
     let Example = (document.querySelector('#orderExample')).cloneNode(true);
     //清除订单根节点的所有元素
@@ -154,13 +197,28 @@ function deleteItemEventFun(e) {
 
 
     //移除节点
-    let orderNode =document.getElementById(id);
+    let orderNode = document.getElementById(id);
     // let currenItemNode = cartListNode.querySelector('[id="' + id + '"]');
     cartList.removeChild(orderNode);
 
     //设置总数
     displaySelectedTotal();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 初始化函数
 function init() {
