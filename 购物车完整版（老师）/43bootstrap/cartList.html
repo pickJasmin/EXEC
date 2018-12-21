@@ -21,7 +21,7 @@
     </nav>
     <!-- 导航结束 -->
   </header>
-  <div class='container mt-3' id="cartRoot">
+  <div class='container mt-3'>
     <div class="row">
       <div class="col-2 font-weight-bold">全部商品 <span class="text-danger" data-name="units">0</span></div>
       <div class="col-4">热门商品</div>
@@ -40,7 +40,7 @@
       <div class="row p-3 mt-1 bg-light d-none" id="orderExample">
         <div class="col-2"><input type="checkbox" data-operator='checkItem'></div>
         <div class="col-5">
-          <a href=""><img data-name="imgSrc" src="" alt="" width="20%" ></a><span data-name="title"></span>
+          <a href=""><img data-name="imgSrc" src="" alt="" width="100px" height="100px"></a><span data-name="title"></span>
         </div>
         <div class="col-1 text-right ">¥<span data-name="price">0.00</span></div>
         <div class="col-2">
@@ -53,6 +53,7 @@
         <div class="col-1">¥<span data-name="subPrice">0.00</span></div>
         <div class="col-1"><button class="btn btn-light" data-operator='deleteItem'>删除</button></div>
       </div>
+
     </div>
     <div class="row mt-3 border p-3">
       <div class="col-2"><input type="checkbox" checked="true" data-operator='selectAll'>全选</div>
@@ -64,8 +65,6 @@
     </div>
   </div>
 
- 
-
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -75,15 +74,8 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
     crossorigin="anonymous"></script>
-  
-  
-  
   <script src="js/shoppingcart.js"></script>
-  <script src="js/list.js"></script>
-  <!-- <script>
-    var x=document.querySelectorAll('[data-name="imgSrc"]');
-    console.log(x);
-    </script> -->
+  <script src="js/cartList.js"></script>
 </body>
 
 </html>
