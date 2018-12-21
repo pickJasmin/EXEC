@@ -100,26 +100,6 @@ function displayOrderList() {
 
 
 
-        // 为加号按钮注册单击事件
-        let increaseBtns = document.querySelectorAll('[data-operator="increase"]');
-        // console.log(increaseBtns);
-        for (const key in increaseBtns) {
-            increaseBtns[key].onclick = changeQtyEventFun;
-        }
-
-        // 为减号按钮注册单击事件
-        let decreaseBtns = document.querySelectorAll('[data-operator="decrease"]');
-        // console.log(decreaseBtns);
-        for (const key in decreaseBtns) {
-            decreaseBtns[key].onclick = changeQtyEventFun;
-        }
-
-        //获取选择框设置转态
-        let checkboxNew = node.querySelector('[data-operator="checkItem"]');
-        //   console.log(checkboxNew);
-        checkboxNew.checked = order.selectStatus;
-
-
 
     }
 }
@@ -161,9 +141,17 @@ function regEvent() {
     console.log(element);
     for (const key in element) {
         //注册订单删除按钮单击事件
-
         element[key].onclick = deleteItemEventFun;
     }
+
+
+
+    // 为加号按钮注册单击事件
+    let increaseBtns = document.querySelectorAll('[data-operator="increase"]');
+    for (const key in increaseBtns) {
+        increaseBtns[key].onclick = changeQtyEventFun;
+    }
+
 
 
 }
@@ -215,6 +203,19 @@ function deleteItemEventFun(e) {
 
 
 
+// 增加减少按钮触发函数
+function changeQtyEventFun(e) {
+
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -222,6 +223,9 @@ function deleteItemEventFun(e) {
 
 // 初始化函数
 function init() {
+
+    let cart = new ShoppingCart();
+    let cartData = cart.getDataFromLocalStorage();
     // 显示订单列表
     displayOrderList();
     // 显示总数据
