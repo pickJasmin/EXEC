@@ -67,35 +67,35 @@ for (const i in addToCartBtns) {
 //加入购物按钮事件触发函数
 function addToCart(e) {
 
-// 获取当前单击商品的数量
-let qty = parseInt((e.target.parentNode).querySelector('[data-name="qty"]').textContent);
-//获取当前点击商品的id
-let id = e.target.getAttribute("data-id");
-//从数据列表中获取商品信息并存入product
-// let productList = productsJson.productList;
-// let product;
-// for (const i in productList) {
-//     if (id == productList[i].id) {
-//         product = productList[i]; break;
-//     }
-// }
-let order = new Order(product, qty,true);
+    // 获取当前单击商品的数量
+    let qty = parseInt((e.target.parentNode).querySelector('[data-name="qty"]').textContent);
+    //获取当前点击商品的id
+    let id = e.target.getAttribute("data-id");
+    从数据列表中获取商品信息并存入product
+    let productList = productsJson.productList;
+    let product;
+    for (const i in productList) {
+        if (id == productList[i].id) {
+            product = productList[i]; break;
+        }
+    }
+    let order = new Order(product, qty,true);
 
-//创建购物车对象实例
-let cart_index = new ShoppingCart();
-//将选中商品写入购物车
-cart_index.addToCart(order);
-displayData();
+    //创建购物车对象实例
+    let cart_index = new ShoppingCart();
+    //将选中商品写入购物车
+    cart_index.addToCart(order);
+    displayData();
 
-// 更新页面商品总数量
-displayData();
+    // 更新页面商品总数量
+    displayData();
 
     // 获取当前单击商品的数量
-    // var qtyObj=  e.target.previousElementSibling.previousElementSibling;
-    // var qty=parseInt(qtyObj.innerText);
-    // var total=parseInt(totalQty.innerText);
-    // total+=qty;
-    // totalQty.innerText=total;  
+    // var qtyObj = e.target.previousElementSibling.previousElementSibling;
+    // var qty = parseInt(qtyObj.innerText);
+    // var total = parseInt(totalQty.innerText);
+    // total += qty;
+    // totalQty.innerText = total;
 
 }
 
@@ -104,7 +104,8 @@ function displayData() {
     let totalQty = document.querySelector('[data-name="totalQty"]');
 
     //创建购物车对象实例
-    let cart_index = new ShoppingCart();
+    let cart_index = new Shopping();
+
 
     // 更新页面商品总数量
     totalQty.textContent = cart_index.getDataFromLocalStorage().totalQty;

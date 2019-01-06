@@ -278,7 +278,8 @@ function checkItemEventFun() {
     let selectStatus = this.checked;
 
     // 调用“设置购物订单项选择状态”方法
-    cart.setItemSelectedStatus(id,selectStatus);
+    cart.setItemSelectedStatus(id, selectStatus);
+
 
     // 设置全选状态
     if (selectStatus == false) {
