@@ -1,4 +1,3 @@
-
 // // 使用json变量存储数据(后续可以从服务器端获得)
 // var productsJson = {
 //     "productList": [{ "id": "01", "title": "30片巨补水 秋冬新款面膜", "imgSrc": "01.jpg", "price": 99.50 },
@@ -11,30 +10,39 @@
 var productList;
 var productsRootNode = document.querySelector('#productsRoot');
 // 将值设置到结点中
-function setValueToNode(product,productNode) {
+function setValueToNode(product, productNode) {
     for (const key in product) {
         if (product.hasOwnProperty(key)) {
             let qstr = '[data-name="' + key + '"]';
             let elementNode = productNode.querySelector(qstr);
             switch (key) {
-                case 'title': elementNode.textContent = product[key]; break;
-                case 'price': elementNode.textContent = product[key].toFixed(2); break;
-                case 'imgSrc': elementNode.src = "images/" + product[key]; break;
-                case 'id': {
-                    // 当前订单节点根元素、+号.减号、删除按钮设计data-id属性
-                    let idAttrNodes = new Array();
-                    idAttrNodes.push(productNode);
-                    idAttrNodes.push(productNode.querySelector('[data-operator="increase"]'));
-                    idAttrNodes.push(productNode.querySelector('[data-operator="decrease"]'));
-                    idAttrNodes.push(productNode.querySelector('[data-operator="addToCart"]'));
-                    idAttrNodes.forEach(element => { element.setAttribute("data-id", product[key]); });
-                }
+                case 'title':
+                    elementNode.textContent = product[key];
+                    break;
+                case 'price':
+                    elementNode.textContent = product[key].toFixed(2);
+                    break;
+                case 'imgSrc':
+                    elementNode.src = "images/" + product[key];
+                    break;
+                case 'id':
+                    {
+                        // 当前订单节点根元素、+号.减号、删除按钮设计data-id属性
+                        let idAttrNodes = new Array();
+                        idAttrNodes.push(productNode);
+                        idAttrNodes.push(productNode.querySelector('[data-operator="increase"]'));
+                        idAttrNodes.push(productNode.querySelector('[data-operator="decrease"]'));
+                        idAttrNodes.push(productNode.querySelector('[data-operator="addToCart"]'));
+                        idAttrNodes.forEach(element => {
+                            element.setAttribute("data-id", product[key]);
+                        });
+                    }
             }
         }
     }
 }
 //为某个结点的各种按钮设计事件
-function regEvent(productNode) {    
+function regEvent(productNode) {
     // 获取增加按并添加单击事件
     let increaseBtn = productNode.querySelector('[data-operator="increase"]');
     increaseBtn.onclick = increaseQty;
@@ -62,7 +70,7 @@ function dispalyProducts() {
         }
 
         // 为缩短引用当前商品，设置一个变量product替代当前商品的数组描述
-        let product = productList[i]; 
+        let product = productList[i];
 
         //拷贝样本节点形成当前商品节点
         let productNode = (document.querySelector('#productExample')).cloneNode(true);
@@ -71,7 +79,7 @@ function dispalyProducts() {
         parentNode.appendChild(productNode);
 
         //将当前商品的值设置到到到页面对应节点中
-        setValueToNode(product,productNode);
+        setValueToNode(product, productNode);
 
         // 移除隐藏属性
         productNode.classList.remove('d-none');
@@ -94,7 +102,7 @@ function displayTotalQty() {
 // 显示所有数据
 function displayData() {
     dispalyProducts();
-    displayTotalQty();    
+    displayTotalQty();
 }
 
 
@@ -127,7 +135,8 @@ function addToCart(e) {
     let product;
     for (const i in productList) {
         if (id == productList[i].id) {
-            product = productList[i]; break;
+            product = productList[i];
+            break;
         }
     }
 
@@ -175,20 +184,10 @@ function getProducts() {
                 productList = jsonData;
                 displayData();
             })
-        }
-        else {
+        } else {
             console.log('网络请求products.json 失败，响应信息：' + response.status + ': ' + response.statusText);
 
         }
     })
 }
 getProducts();
-
-
-
-
-
-
-
-
-
