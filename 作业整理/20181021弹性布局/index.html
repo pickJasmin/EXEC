@@ -1,52 +1,240 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-cmn">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <style>
+        .demo-display {
+            margin: 0 auto;
+            padding: 2em 6% 2em;
+            width: 100%;
+            background: rgb(243, 128, 253);
+            border-bottom: 3px solid white;
+            box-sizing: border-box;
+            font-family: europa, sans-serif;
+
+        }
+
+        .l-fullheight {
+            min-height: 100vh;
+        }
+
+        .flexbox .flex-card-list {
+            /* 让弹性盒元素在必要的时候拆行 */
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 100%;
+        }
+
+        .flex-card-list li {
+            display: flex;
+            list-style: none;
+            width: 100%;
+        }
+
+        .flexbox .flex-card-listitem {
+            /* 使用flexbox可以控制卡模块 */
+            display: flex;
+        }
+
+        .flex-card {
+            background: #ffffff;
+            border-radius: 5px;
+            margin-bottom: 1em;
+            padding: 0.6em;
+            margin: 10px;
+            height: 200px;
+
+        }
+
+        .flexbox .flex-card {
+            /* 弹性盒元素的方向为垂直显示 */
+            display: flex;
+            flex-direction: column;
+            width: 150%;
+
+        }
+
+
+
+        .flex-card-content {
+            display: flex;
+            flex: 1 0 auto;
+            flex-direction: column;
+
+        }
+
+        .flex-card-heading h3 {
+            margin: 1em 0;
+        }
+
+        .flexbox .flex-card-content p {
+            margin: 0 0 1em;
+            flex: 1 0 auto;
+        }
+
+        .flex-card-button {
+            background: rgb(120, 119, 226);
+            border-radius: 5px;
+            color: #fff;
+            display: block;
+            padding: 1em .40em;
+            /* 去掉下划线 */
+            text-decoration: none;
+            transition: 3s ease;
+            text-align: center;
+        }
+
+        @media all and (min-width:40em) {
+            /* 浮动布局 */
+            .flex-card-list li {
+                width: 50%;
+                list-style-type: none;
+            }
+            .flex-card-list li {
+                float: left;
+                list-style-type: none;
+            }
+        }
+
+        /* 将布局调整为每行3张卡 */
+
+        @media all and (min-width:40em) and (max-width:60em) {
+            /* 清除每行2个项目的行 */
+            .flex-card-list li:nth-child(2n+1) {
+                clear: both;
+                list-style-type: none;
+            }
+        }
+
+        @media all and (min-width:60em) {
+            /* flex and non-flex共有的 */
+            .flex-card-list li {
+                width: 33.33%;
+                list-style-type: none;
+            }
+            /* 浮标：每第三项后清除 */
+            /*.no-flexbox*/
+            .flex-card-list li:nth-child(3n+1) {
+                clear: both;
+                list-style-type: none;
+            }
+        }
+    </style>
+
 </head>
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-    }
-    div{
-        height: 300px;
-        width: 1000px;
-        margin: 0px auto;
-    }
-    ul{
-        display:flex;
-	    flex-wrap:wrap;
-    }
-    li{
-        list-style: none;
-        height: 200px;
-        width: 200px;
-        background-color: brown;
-        margin: 50px auto;
-    }
-    p{
-        text-align: center;
-        margin: 0 auto;
-    }
-
-
-
-
-
-</style>
 
 <body>
-    
-    <ul>
-        <li><p>1</p></li>
-        <li><p>2</p></li>
-        <li><p>3</p></li>
-        <li><p>4</p></li>
-        <li><p>5</p></li>
-        <li><p>6</p></li>
-    </ul>
+
+    <figure class="demo-display l-fullheight">
+        <ul class="flex-card-list">
+            <li class="flex-card-listitem">
+                <div class="flex-card">
+
+                    <div class="flex-card-content">
+                        <h3 class="flex-card-heading">
+                            one
+                        </h3>
+                        <p>
+                            我的第一个卡片
+                        </p>
+                        <a href="#" class="flex-card-button">
+                            按键
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="flex-card-listitem">
+                <!-- 卡片模块 -->
+                <div class="flex-card">
+                    <!-- 内容容器 -->
+                    <div class="flex-card-content">
+                        <h3 class="flex-card-heading">
+                            two
+                        </h3>
+                        <p> 我的第二个卡片</p>
+                        <!-- <p>I'm some extra content put here to make life more difficult, because I can.</p> -->
+                        <a href="#" class="flex-card-button">
+                            按键
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="flex-card-listitem">
+                <!-- 卡片模块 -->
+                <div class="flex-card">
+                    <!-- 内容容器 -->
+                    <div class="flex-card-content">
+                        <h3 class="flex-card-heading">
+                            three
+                        </h3>
+                        <p>我的第三个卡片</p>
+
+                        <a href="#" class="flex-card-button">
+                            按键
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li class="flex-card-listitem">
+                <div class="flex-card">
+
+                    <div class="flex-card-content">
+                        <h3 class="flex-card-heading">
+                            one
+                        </h3>
+                        <p>
+                            我的第一个卡片
+                        </p>
+                        <a href="#" class="flex-card-button">
+                            按键
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="flex-card-listitem">
+                <!-- 卡片模块 -->
+                <div class="flex-card">
+                    <!-- 内容容器 -->
+                    <div class="flex-card-content">
+                        <h3 class="flex-card-heading">
+                            two
+                        </h3>
+                        <p> 我的第二个卡片</p>
+                        <!-- <p>I'm some extra content put here to make life more difficult, because I can.</p> -->
+                        <a href="#" class="flex-card-button">
+                            按键
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="flex-card-listitem">
+                <!-- 卡片模块 -->
+                <div class="flex-card">
+                    <!-- 内容容器 -->
+                    <div class="flex-card-content">
+                        <h3 class="flex-card-heading">
+                            three
+                        </h3>
+                        <p>我的第三个卡片</p>
+
+                        <a href="#" class="flex-card-button">
+                            按键
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </figure>
 </body>
+
 </html>
