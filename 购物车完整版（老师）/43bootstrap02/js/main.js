@@ -60,6 +60,7 @@ function addToCart(e) {
 
     //创建购物车对象实例
     let cart_index = new ShoppingCart();
+    console.log(cart_index);
     //将选中商品写入购物车
     cart_index.addToCart(order);
     displayData();
