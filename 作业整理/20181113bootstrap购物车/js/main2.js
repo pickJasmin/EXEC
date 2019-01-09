@@ -116,7 +116,7 @@ function addToCartNum(e) {
 
     // 获取当前商品的的id
     let productionId = (e.target.parentNode.parentNode.parentNode.parentNode.parentNode).getAttribute("id");
-    // // 定义变量product用于储存商品的数据
+    // 定义变量product用于储存商品的数据
     var product;
     // 遍历所有商品数据products，与当前id相同的商品数据存入变量product
     for (const i in carts) {
@@ -125,7 +125,7 @@ function addToCartNum(e) {
             break;
         }
     }
-    // // 实例化Order并存入变量order中
+    // 实例化Order并存入变量order中
     var order = new Order(product, qty, true);
 
     cart.addToCart(order);
